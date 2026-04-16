@@ -4,11 +4,11 @@
   {{- $resolved = (strings.TrimPrefix "/" $src) | absURL -}}
 {{- end -}}
 <button
-  class="photo-gallery__trigger"
+  class="lightbox-trigger photo-gallery__trigger"
   type="button"
-  data-gallery-item
-  data-gallery-src="{{ $resolved }}"
-  data-gallery-alt="{{ .Get "alt" }}"
+  data-lightbox-item
+  data-lightbox-src="{{ $resolved }}"
+  data-lightbox-alt="{{ .Get "alt" }}"
   aria-label="Powiększ zdjęcie: {{ .Get "alt" }}"
 >
   <img src="{{ $resolved }}" alt="{{ .Get "alt" }}">

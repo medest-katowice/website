@@ -484,6 +484,109 @@ body.nav-open .menu-toggle span:nth-child(3) { transform: rotate(-45deg); }
     text-decoration: none;
 }
 
+.certificates-archive {
+    max-width: 920px;
+    margin: 2rem 0 0;
+}
+
+.certificate-highlight {
+    margin: 2rem 0 3rem;
+}
+
+.certificate-group {
+    margin-top: 3.5rem;
+}
+
+.certificate-list {
+    list-style: none;
+    margin: 1rem 0 0;
+    padding: 0;
+    max-width: none;
+}
+
+.page-content .certificate-list {
+    color: inherit;
+    margin-bottom: 0;
+}
+
+.page-content .certificate-list li {
+    margin-bottom: 0;
+}
+
+.certificate-item {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.certificate-item:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.certificate-card__trigger {
+    display: grid;
+    grid-template-columns: 5.5rem minmax(0, 1fr);
+    align-items: center;
+    gap: 1.25rem;
+    width: 100%;
+    padding: 1rem 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.certificate-card__trigger--highlight {
+    grid-template-columns: 7.5rem minmax(0, 1fr);
+    padding: 0;
+}
+
+.certificate-card__thumb {
+    width: 5.5rem;
+    height: 5.5rem;
+    border-radius: 999px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.certificate-card__thumb--highlight {
+    width: 7.5rem;
+    height: 7.5rem;
+}
+
+.certificate-card__thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.certificate-card__trigger:hover .certificate-card__thumb img,
+.certificate-card__trigger:focus-visible .certificate-card__thumb img {
+    transform: scale(1.04);
+    opacity: 0.96;
+}
+
+.certificate-card__trigger:focus-visible {
+    outline: none;
+}
+
+.certificate-card__date {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.certificate-card__description {
+    display: block;
+    color: var(--text-primary);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
 .photo-gallery__hero {
     max-width: 900px;
     margin: 2rem 0 1rem;
@@ -846,6 +949,18 @@ body.lightbox-open .scroll-right {
 
     .photo-gallery {
         grid-template-columns: 1fr;
+    }
+
+    .certificate-card__trigger,
+    .certificate-card__trigger--highlight {
+        grid-template-columns: 4.5rem minmax(0, 1fr);
+        gap: 1rem;
+    }
+
+    .certificate-card__thumb,
+    .certificate-card__thumb--highlight {
+        width: 4.5rem;
+        height: 4.5rem;
     }
 
     .gallery-lightbox__dialog {

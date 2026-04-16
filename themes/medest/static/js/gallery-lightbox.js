@@ -1,14 +1,14 @@
 (function () {
   'use strict';
 
-  var triggers = Array.prototype.slice.call(document.querySelectorAll('.photo-gallery__trigger'));
+  var triggers = Array.prototype.slice.call(document.querySelectorAll('[data-lightbox-item]'));
 
   if (!triggers.length) return;
 
   var items = triggers.map(function (trigger) {
     return {
-      src: trigger.getAttribute('data-gallery-src'),
-      alt: trigger.getAttribute('data-gallery-alt') || ''
+      src: trigger.getAttribute('data-lightbox-src'),
+      alt: trigger.getAttribute('data-lightbox-alt') || ''
     };
   });
 
@@ -17,15 +17,15 @@
   lightbox.setAttribute('hidden', 'hidden');
   lightbox.innerHTML =
     '<div class="gallery-lightbox__backdrop" data-lightbox-close></div>' +
-    '<div class="gallery-lightbox__dialog" role="dialog" aria-modal="true" aria-label="Galeria zdjęć">' +
-      '<button class="gallery-lightbox__button gallery-lightbox__button--close" type="button" data-lightbox-close aria-label="Zamknij galerię">&times;</button>' +
-      '<button class="gallery-lightbox__button gallery-lightbox__button--prev" type="button" aria-label="Poprzednie zdjęcie">&lsaquo;</button>' +
+    '<div class="gallery-lightbox__dialog" role="dialog" aria-modal="true" aria-label="Podgląd obrazu">' +
+      '<button class="gallery-lightbox__button gallery-lightbox__button--close" type="button" data-lightbox-close aria-label="Zamknij podgląd">&times;</button>' +
+      '<button class="gallery-lightbox__button gallery-lightbox__button--prev" type="button" aria-label="Poprzedni obraz">&lsaquo;</button>' +
       '<figure class="gallery-lightbox__figure">' +
         '<img class="gallery-lightbox__image" alt="">' +
         '<figcaption class="gallery-lightbox__caption"></figcaption>' +
         '<div class="gallery-lightbox__counter" aria-live="polite"></div>' +
       '</figure>' +
-      '<button class="gallery-lightbox__button gallery-lightbox__button--next" type="button" aria-label="Następne zdjęcie">&rsaquo;</button>' +
+      '<button class="gallery-lightbox__button gallery-lightbox__button--next" type="button" aria-label="Następny obraz">&rsaquo;</button>' +
     '</div>';
 
   document.body.appendChild(lightbox);

@@ -1,0 +1,57 @@
+{{- $data := hugo.Data.certificates -}}
+{{- if not $data -}}
+  {{- errorf "Missing certificates data file" -}}
+{{- end -}}
+
+<div class="certificates-archive">
+  {{ with $data.highlight }}
+  {{ $alt := printf "%s — %s" .date .description }}
+  <div class="certificate-highlight">
+    <button
+      class="lightbox-trigger certificate-card__trigger certificate-card__trigger--highlight"
+      type="button"
+      data-lightbox-item
+      data-lightbox-src="{{ (strings.TrimPrefix "/" .full) | absURL }}"
+      data-lightbox-alt="{{ $alt }}"
+      aria-label="Powiększ certyfikat: {{ $alt }}"
+    >
+      <span class="certificate-card__thumb certificate-card__thumb--highlight">
+        <img src="{{ (strings.TrimPrefix "/" .thumb) | absURL }}" alt="{{ $alt }}" loading="lazy">
+      </span>
+      <span class="certificate-card__content">
+        <span class="certificate-card__date">{{ .date }}</span>
+        <span class="certificate-card__description">{{ .description }}</span>
+      </span>
+    </button>
+  </div>
+  {{ end }}
+
+  {{ range $data.groups }}
+  <section class="certificate-group">
+    <h3>{{ .title }}</h3>
+    <ul class="certificate-list">
+      {{ range .items }}
+      {{ $alt := printf "%s — %s" .date .description }}
+      <li class="certificate-item">
+        <button
+          class="lightbox-trigger certificate-card__trigger"
+          type="button"
+          data-lightbox-item
+          data-lightbox-src="{{ (strings.TrimPrefix "/" .full) | absURL }}"
+          data-lightbox-alt="{{ $alt }}"
+          aria-label="Powiększ certyfikat: {{ $alt }}"
+        >
+          <span class="certificate-card__thumb">
+            <img src="{{ (strings.TrimPrefix "/" .thumb) | absURL }}" alt="{{ $alt }}" loading="lazy">
+          </span>
+          <span class="certificate-card__content">
+            <span class="certificate-card__date">{{ .date }}</span>
+            <span class="certificate-card__description">{{ .description }}</span>
+          </span>
+        </button>
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
+</div>
