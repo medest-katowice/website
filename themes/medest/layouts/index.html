@@ -75,7 +75,7 @@
         <span class="label">{{ .label | default "Dlaczego Medest" }}</span>
         <h2>{{ .heading | safeHTML }}</h2>
         {{ range .paragraphs }}
-        <p{{ if .italic }} class="text-italic"{{ end }}>{{ .text }}</p>
+        <p{{ if .italic }} class="text-italic"{{ end }}>{{ .text | safeHTML }}</p>
         {{ end }}
     </div>
 </section>

@@ -50,4 +50,4 @@ Efekt jest widoczny od razu i stabilizuje się w ciągu kilku dni. Utrzymuje si�
 
 ### Bezpieczeństwo
 
-Modelowanie ust w gabinecie Medest wykonywane jest wyłącznie przez lekarza, z użyciem certyfikowanych preparatów kwasu hialuronowego. Dbamy o naturalny efekt i pełne bezpieczeństwo.
+Modelowanie ust w gabinecie **medest** wykonywane jest wyłącznie przez lekarza, z użyciem certyfikowanych preparatów kwasu hialuronowego. Dbamy o naturalny efekt i pełne bezpieczeństwo.

@@ -16,7 +16,7 @@ Widoczne naczynka (teleangiektazje) i rozlany rumień to problem wielu osób. Na
 
 ### Jak możemy pomóc
 
-W gabinecie Medest oferujemy metody pozwalające na skuteczną redukcję widocznych naczynek:
+W gabinecie **medest** oferujemy metody pozwalające na skuteczną redukcję widocznych naczynek:
 
 - **Elektrokoagulacja** — precyzyjne zamykanie pojedynczych naczyń
 - **Indywidualna diagnostyka** — ocena, czy problem wymaga jedynie zabiegów estetycznych, czy też konsultacji dermatologicznej

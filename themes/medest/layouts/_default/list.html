@@ -15,7 +15,7 @@
                 <span class="service-number">{{ printf "%02d" (add $i 1) }}</span>
                 <h2 class="service-title">{{ $page.Title }}</h2>
                 {{ with $page.Params.subtitle }}
-                <p class="service-description">{{ . }}</p>
+                <p class="service-description">{{ . | safeHTML }}</p>
                 {{ end }}
             </a>
         </li>

@@ -174,6 +174,7 @@ body.nav-open .menu-toggle span:nth-child(3) { transform: rotate(-45deg); }
     transform: translateX(-50%);
     width: 100%;
     height: 100vh;
+    z-index: -1;
     pointer-events: none;
     color: var(--text-primary);
     transition: opacity 0.1s linear;
@@ -466,13 +467,21 @@ body.nav-open .menu-toggle span:nth-child(3) { transform: rotate(-45deg); }
     font-weight: 700;
 }
 
-.page-content p a:not(.cta-link),
-.page-content li a:not(.cta-link),
-.page-content dd a:not(.cta-link),
-.page-content td a:not(.cta-link) {
+.page-content a:not(.cta-link) {
     text-decoration: underline;
     text-underline-offset: 0.18em;
     text-decoration-thickness: 1px;
+}
+
+.page-content .service-list a,
+.page-content h1 a,
+.page-content h2 a,
+.page-content h3 a,
+.page-content h4 a,
+.page-content h5 a,
+.page-content h6 a,
+.page-content .page-subheading a {
+    text-decoration: none;
 }
 
 .photo-gallery__hero {

@@ -8,7 +8,7 @@ url: "/bezpieczenstwo/"
 
 ### Kwalifikacja do zabiegu
 
-Każdy zabieg w gabinecie Medest poprzedza konsultacja lekarska. Podczas rozmowy zbieramy wywiad zdrowotny, omawiamy oczekiwania i oceniamy wskazania. Nie wykonujemy zabiegów bez wcześniejszej kwalifikacji.
+Każdy zabieg w gabinecie **medest** poprzedza konsultacja lekarska. Podczas rozmowy zbieramy wywiad zdrowotny, omawiamy oczekiwania i oceniamy wskazania. Nie wykonujemy zabiegów bez wcześniejszej kwalifikacji.
 
 ### Certyfikowane preparaty
 

@@ -48,7 +48,7 @@ trust:
   image: "/images/gabinet-medest-katowice-zabiegowy.jpg"
   heading: "Gabinet<br><span class=\"text-italic\">Lekarski</span>"
   paragraphs:
-    - text: "W gabinecie medest oferujemy nowoczesne zabiegi medycyny estetycznej poprawiające wygląd, kondycję skóry oraz redukujące objawy starzenia. Specjalizujemy się w korekcji twarzy, szyi oraz dekoltu."
+    - text: "W gabinecie <strong>medest</strong> oferujemy nowoczesne zabiegi medycyny estetycznej poprawiające wygląd, kondycję skóry oraz redukujące objawy starzenia. Specjalizujemy się w korekcji twarzy, szyi oraz dekoltu."
     - text: "Podnosimy kwalifikacje podczas szkoleń zaawansowanych technik, a zabiegi wykonujemy z zastosowaniem certyfikowanych preparatów zatwierdzonych przez Food and Drug Administration (FDA)."
 
 consultation:

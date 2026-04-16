@@ -51,4 +51,4 @@ Głębokość działania i rodzaj stosowanego kwasu dobierane są indywidualnie 
 
 ### Bezpieczeństwo
 
-Pilingi wykonywane w gabinecie Medest to pilingi lekarskie — o wyższym stężeniu i głębszym działaniu niż preparaty kosmetyczne. Ich zastosowanie wymaga precyzyjnej kwalifikacji i kontroli lekarskiej.
+Pilingi wykonywane w gabinecie **medest** to pilingi lekarskie — o wyższym stężeniu i głębszym działaniu niż preparaty kosmetyczne. Ich zastosowanie wymaga precyzyjnej kwalifikacji i kontroli lekarskiej.

@@ -5,6 +5,7 @@ label: "O nas"
 subtitle: "Medycyna estetyczna prowadzona przez lekarza, w atmosferze komfortu i dyskrecji."
 aliases:
   - "/cennik/"
+  - "/o-gabinecie/wirtualny-spacer/"
 ---
 
 ### Adrianna Laska

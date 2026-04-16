@@ -42,4 +42,4 @@ Efekt to nie „wypełniona twarz", lecz twarz, która wygląda po prostu młodz
 
 ### Bezpieczeństwo
 
-Lifting wolumetryczny wymaga zaawansowanej znajomości anatomii twarzy. W gabinecie Medest zabieg planowany jest i wykonywany przez lekarza, z użyciem certyfikowanych preparatów najwyższej klasy.
+Lifting wolumetryczny wymaga zaawansowanej znajomości anatomii twarzy. W gabinecie **medest** zabieg planowany jest i wykonywany przez lekarza, z użyciem certyfikowanych preparatów najwyższej klasy.
