@@ -29,5 +29,7 @@ url: "/cennik/"
 - Podane ceny są orientacyjne i mogą różnić się w zależności od ilości użytego preparatu i zakresu zabiegu.
 - Ostateczny koszt ustalany jest indywidualnie po konsultacji lekarskiej i kwalifikacji.
 - Oferujemy możliwość rozłożenia kosztów większych zabiegów na etapy.
+- W gabinecie można płacić gotówką, kartami płatniczymi oraz bonami podarunkowymi.
+- Informacje o zakupie i realizacji bonów znajdziesz na stronie [Bony podarunkowe]({{< relref "o-gabinecie/bony-podarunkowe.md" >}}).
 
 Masz pytania dotyczące cen? [Skontaktuj się z nami](/kontakt/) — chętnie odpowiemy.

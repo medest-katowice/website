@@ -60,6 +60,11 @@ canonifyURLs = true
   weight = 40
 
 [[menus.main]]
+  name = "Cennik"
+  url = "/cennik/"
+  weight = 45
+
+[[menus.main]]
   name = "Kontakt"
   url = "/kontakt/"
   weight = 50
@@ -67,21 +72,16 @@ canonifyURLs = true
 # ── Footer navigation ──
 
 [[menus.footer]]
-  name = "Cennik"
-  url = "/cennik/"
-  weight = 10
-
-[[menus.footer]]
   name = "RODO"
   url = "/klauzula-informacyjna-rodo/"
-  weight = 20
+  weight = 10
 
 [[menus.footer]]
   name = "Ochrona małoletnich"
   url = "/standardy-ochrony-maloletnich/"
-  weight = 30
+  weight = 20
 
 [[menus.footer]]
   name = "Kontakt"
   url = "/kontakt/"
-  weight = 40
+  weight = 30

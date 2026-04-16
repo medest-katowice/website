@@ -1,7 +1,7 @@
 # Redirects (for Netlify / Cloudflare Pages)
 # Merged/removed content pages
 /nowosci/                           /               301
-/o-gabinecie/bony-upominkowe-2/     /o-gabinecie/   301
+/o-gabinecie/bony-upominkowe-2/     /o-gabinecie/bony-podarunkowe/   301
 
 # Legacy WordPress sitemap URLs
 /sitemap.html                       /sitemap.xml    301
