@@ -1,0 +1,13 @@
+{{ define "main" }}
+
+<div class="page-content page-content--top">
+    {{ .Content }}
+
+    {{ with .Params.cta }}
+    <div style="margin-top: 3rem;">
+        <a href="{{ (strings.TrimPrefix "/" (.url | default "/kontakt/")) | absURL }}" class="label cta-link">{{ .text | default "Umów konsultację" }}</a>
+    </div>
+    {{ end }}
+</div>
+
+{{ end }}

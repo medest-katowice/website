@@ -1,0 +1,647 @@
+:root {
+    --bg-color: #121212;
+    --text-primary: #EDEDED;
+    --text-muted: #a6a6a6;
+    --pane-divider-opacity: 0;
+
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Manrope', sans-serif;
+
+    --space-xs: 0.5rem;
+    --space-sm: 1.5rem;
+    --space-md: 4rem;
+    --space-lg: 8rem;
+
+    --dot-size: 4px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+    line-height: 1.5;
+}
+
+/* ── Typography ── */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+}
+
+.label {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+.brand-statement {
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: #FFFFFF;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.text-italic { font-style: italic; }
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.25s ease, opacity 0.25s ease, border-color 0.25s ease;
+}
+
+a:hover {
+    opacity: 1;
+    color: #fff;
+}
+
+/* ── Layout ── */
+
+.page-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    height: 100vh;
+    position: relative;
+}
+
+.header-anchor {
+    position: fixed;
+    top: 3rem;
+    left: 3rem;
+    right: 3rem;
+    display: flex;
+    justify-content: space-between;
+    z-index: 200;
+    pointer-events: none;
+}
+
+.header-anchor > * {
+    pointer-events: auto;
+}
+
+.header-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+}
+
+.header-brand-name {
+    color: inherit;
+}
+
+.header-label--home .header-brand-name,
+.header-label--home .header-brand-city {
+    display: none;
+}
+
+.menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 1.9rem;
+    height: 1.9rem;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: transparent;
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    position: absolute;
+    width: 0.85rem;
+    height: 1px;
+    background: currentColor;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.menu-toggle span:nth-child(1) { transform: translateY(-0.28rem); }
+.menu-toggle span:nth-child(2) { transform: translateY(0); }
+.menu-toggle span:nth-child(3) { transform: translateY(0.28rem); }
+
+body.nav-open .menu-toggle span:nth-child(1) { transform: rotate(45deg); }
+body.nav-open .menu-toggle span:nth-child(2) { opacity: 0; }
+body.nav-open .menu-toggle span:nth-child(3) { transform: rotate(-45deg); }
+
+/* ── Fixed left panel ── */
+
+.fixed-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3rem;
+    background-color: var(--bg-color);
+    border-right: 1px solid rgba(255, 255, 255, var(--pane-divider-opacity));
+    z-index: 100;
+}
+
+/* ── Logo separator between panels ── */
+
+.separator {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100vh;
+    z-index: 150;
+    pointer-events: none;
+    color: var(--text-primary);
+    transition: opacity 0.1s linear;
+}
+
+@media (min-width: 1025px) {
+    .separator {
+        left: 40%;
+    }
+}
+
+.separator svg {
+    width: 100%;
+    height: 100%;
+}
+
+.branding-center {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.branding-center h1 {
+    font-size: clamp(2.5rem, 4vw, 5rem);
+    line-height: 1;
+    margin: 1rem 0 1.5rem 0;
+}
+
+.branding-center--page .brand-statement {
+    margin-bottom: 1rem;
+}
+
+.branding-center--page h1 {
+    margin-bottom: 1rem;
+}
+
+.branding-center--page .hero-subtitle {
+    max-width: 26rem;
+    margin-bottom: 0;
+}
+
+.nav-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.nav-vertical a.active {
+    color: var(--text-primary);
+}
+
+/* ── Scrollable right panel ── */
+
+.scroll-right {
+    grid-column: 2;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 0 4rem;
+    scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
+    scrollbar-gutter: stable;
+    overscroll-behavior-y: contain;
+}
+
+.dot {
+    width: var(--dot-size);
+    height: var(--dot-size);
+    border-radius: 50%;
+    background-color: var(--text-primary);
+    display: inline-block;
+}
+
+.dot-pair {
+    display: flex;
+    gap: 1.2rem;
+    margin: 1.5rem 0;
+}
+
+/* ── Sections ── */
+
+.section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--space-lg) 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    scroll-snap-align: start;
+}
+
+.section:last-child {
+    border-bottom: none;
+}
+
+.hero-subtitle {
+    font-size: 1.4rem;
+    color: var(--text-muted);
+    max-width: 400px;
+    line-height: 1.4;
+}
+
+/* ── Images ── */
+
+.image-container {
+    width: 100%;
+    aspect-ratio: 4/5;
+    position: relative;
+    overflow: hidden;
+    margin: 2rem 0;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(20%) contrast(1.1) brightness(0.8);
+}
+
+.image-container .label {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+}
+
+.image-wide {
+    aspect-ratio: 16/9;
+}
+
+/* ── Content blocks ── */
+
+.content-block {
+    max-width: 480px;
+}
+
+.content-block h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.content-block p {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+/* ── Service list ── */
+
+.service-list {
+    list-style: none;
+    margin-top: 2rem;
+}
+
+.service-item {
+    padding: 2rem 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.service-item:last-child {
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.service-item a {
+    display: block;
+}
+
+.service-number {
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.service-title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    transition: color 0.25s ease;
+}
+
+.service-description {
+    color: var(--text-muted);
+    font-size: 1rem;
+    transition: color 0.25s ease;
+}
+
+.service-item a:hover .service-title,
+.service-item a:hover .service-description {
+    color: #fff;
+}
+
+/* ── CTA link ── */
+
+.cta-link {
+    border-bottom: 1px solid var(--text-muted);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+    transition: opacity 0.4s ease, border-color 0.4s ease;
+}
+
+.cta-link:hover {
+    border-color: #fff;
+}
+
+/* ── Sub-page content ── */
+
+.page-content {
+    padding: var(--space-lg) 0;
+}
+
+.page-content--top {
+    padding-top: 7rem;
+}
+
+.page-content--top > :first-child {
+    margin-top: 0;
+}
+
+.page-content--top .service-list:first-child {
+    margin-top: 0;
+}
+
+.page-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.page-content h2.page-subheading,
+.page-content h3 {
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.page-content p {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    max-width: 520px;
+}
+
+.page-content ul,
+.page-content ol {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    max-width: 520px;
+}
+
+.page-content li {
+    margin-bottom: 0.5rem;
+}
+
+.page-content strong {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* ── Pricing table ── */
+
+.price-table {
+    width: 100%;
+    max-width: 520px;
+    margin: 2rem 0;
+    border-collapse: collapse;
+}
+
+.price-table th,
+.price-table td {
+    text-align: left;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 1rem;
+}
+
+.price-table th {
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+.price-table td {
+    color: var(--text-muted);
+}
+
+.price-table td:first-child {
+    color: var(--text-primary);
+}
+
+/* ── Contact info ── */
+
+.contact-info {
+    margin: 2rem 0;
+}
+
+.contact-info dt {
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-info dt:first-child {
+    margin-top: 0;
+}
+
+.contact-info dd {
+    font-size: 1.15rem;
+    color: var(--text-primary);
+}
+
+/* ── Footer ── */
+
+.site-footer {
+    margin-top: 5rem;
+    padding: 3rem 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-copy {
+    color: var(--text-muted);
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 1024px) {
+    body {
+        overflow-y: auto;
+    }
+
+    .page-container {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .fixed-left {
+        position: relative;
+        width: 100%;
+        min-height: 78vh;
+        height: auto;
+        padding: 6.5rem 2rem 6rem 2rem;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .brand-statement {
+        display: none;
+    }
+
+    .branding-center {
+        justify-content: flex-start;
+        padding-top: 2.5rem;
+    }
+
+    .branding-center--page h1 {
+        font-size: clamp(2rem, 8vw, 3.5rem);
+    }
+
+    .branding-center--page .hero-subtitle {
+        max-width: none;
+    }
+
+    .header-anchor {
+        top: 1.5rem;
+        left: 1.5rem;
+        right: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 0.4rem;
+    }
+
+    .header-brand-city {
+        display: none;
+    }
+
+    .menu-toggle {
+        position: relative;
+        display: inline-flex;
+        flex: 0 0 auto;
+    }
+
+    .header-phone {
+        order: 2;
+    }
+
+    .nav-vertical {
+        min-height: 16rem;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    body.nav-open .nav-vertical {
+        position: fixed;
+        top: 5.5rem;
+        left: 1.5rem;
+        right: 1.5rem;
+        min-height: auto;
+        padding: 1.2rem 1.4rem;
+        gap: 1rem;
+        background: rgba(18, 18, 18, 0.94);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(18px);
+        z-index: 250;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .scroll-right {
+        grid-column: 1;
+        height: auto;
+        overflow: visible;
+        padding: 0 2rem;
+        scroll-snap-type: none;
+        scrollbar-gutter: auto;
+    }
+    .section {
+        min-height: auto;
+        padding: var(--space-md) 0;
+        scroll-snap-align: none;
+    }
+
+    .page-content--top {
+        padding-top: 2.5rem;
+    }
+
+    .branding-center h1 {
+        font-size: clamp(2rem, 8vw, 3.5rem);
+    }
+
+}
+
+@media (max-width: 640px) {
+    .scroll-right {
+        padding: 0 1.5rem;
+    }
+
+    .fixed-left {
+        min-height: 82vh;
+        padding: 6.25rem 1.5rem 6.5rem 1.5rem;
+    }
+
+    .branding-center {
+        padding-top: 3rem;
+    }
+
+    .nav-vertical {
+        min-height: 18rem;
+    }
+
+}

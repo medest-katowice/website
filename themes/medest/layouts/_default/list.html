@@ -1,0 +1,28 @@
+{{ define "main" }}
+
+{{ $pages := .Pages }}
+{{ if or .Content $pages }}
+<div class="page-content page-content--top">
+    {{ with .Content }}
+    {{ . }}
+    {{ end }}
+
+    {{ if $pages }}
+    <ul class="service-list">
+        {{ range $i, $page := $pages }}
+        <li class="service-item">
+            <a href="{{ $page.RelPermalink }}">
+                <span class="service-number">{{ printf "%02d" (add $i 1) }}</span>
+                <h2 class="service-title">{{ $page.Title }}</h2>
+                {{ with $page.Params.subtitle }}
+                <p class="service-description">{{ . }}</p>
+                {{ end }}
+            </a>
+        </li>
+        {{ end }}
+    </ul>
+    {{ end }}
+</div>
+{{ end }}
+
+{{ end }}

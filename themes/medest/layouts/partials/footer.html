@@ -1,0 +1,8 @@
+<footer class="site-footer">
+    <div class="footer-links">
+        {{ range .Site.Menus.footer }}
+        <a href="{{ (strings.TrimPrefix "/" .URL) | absURL }}" class="label">{{ .Name }}</a>
+        {{ end }}
+    </div>
+    <div class="footer-copy">© {{ now.Year }} {{ .Site.Params.brand | default "Medest" }} — {{ .Site.Params.footer_tagline | default "Gabinet Medycyny Estetycznej" }}</div>
+</footer>

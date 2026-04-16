@@ -1,0 +1,97 @@
+{{ define "main" }}
+
+{{/* ── Philosophy / About ── */}}
+{{ with .Params.philosophy }}
+<section class="section" id="philosophy">
+    {{ with .image }}
+    <div class="image-container">
+        <img src="{{ (strings.TrimPrefix "/" .) | absURL }}" alt="{{ $.Params.philosophy.image_alt | default "Gabinet Medest" }}">
+    </div>
+    {{ end }}
+    <div class="content-block">
+        {{ range .paragraphs }}
+        <p{{ if .italic }} class="text-italic"{{ end }}>{{ .text | safeHTML }}</p>
+        {{ end }}
+    </div>
+</section>
+{{ end }}
+
+{{/* ── Featured treatments ── */}}
+{{ with .Params.treatments }}
+<section class="section" id="zabiegi">
+    <span class="label">{{ .label | default "Wybrane zabiegi" }}</span>
+    <ul class="service-list">
+        {{ range $i, $item := .items }}
+        <li class="service-item">
+            <a href="{{ (strings.TrimPrefix "/" $item.url) | absURL }}">
+                <span class="service-number">{{ printf "%02d" (add $i 1) }}</span>
+                <h2 class="service-title">{{ $item.title }}</h2>
+                <p class="service-description">{{ $item.description }}</p>
+            </a>
+        </li>
+        {{ end }}
+    </ul>
+    <div style="margin-top: 2rem;">
+        <a href="{{ "zabiegi/" | absURL }}" class="label cta-link">Wszystkie zabiegi</a>
+    </div>
+</section>
+{{ end }}
+
+{{/* ── Problems / Indications ── */}}
+{{ with .Params.problems }}
+<section class="section" id="wskazania">
+    <div class="content-block">
+        <span class="label">{{ .label | default "Problemy" }}</span>
+        <h2>{{ .heading | safeHTML }}</h2>
+        {{ range .paragraphs }}
+        <p>{{ .text }}</p>
+        {{ end }}
+    </div>
+    <ul class="service-list">
+        {{ range $i, $item := .items }}
+        <li class="service-item">
+            <a href="{{ (strings.TrimPrefix "/" $item.url) | absURL }}">
+                <span class="service-number">{{ printf "%02d" (add $i 1) }}</span>
+                <h2 class="service-title">{{ $item.title }}</h2>
+            </a>
+        </li>
+        {{ end }}
+    </ul>
+    <div style="margin-top: 2rem;">
+        <a href="{{ "wskazania/" | absURL }}" class="label cta-link">Wszystkie wskazania</a>
+    </div>
+</section>
+{{ end }}
+
+{{/* ── Why trust us ── */}}
+{{ with .Params.trust }}
+<section class="section" id="zaufanie">
+    {{ with .image }}
+    <div class="image-container image-wide">
+        <img src="{{ (strings.TrimPrefix "/" .) | absURL }}" alt="Gabinet Medest Katowice">
+    </div>
+    {{ end }}
+    <div class="content-block">
+        <span class="label">{{ .label | default "Dlaczego Medest" }}</span>
+        <h2>{{ .heading | safeHTML }}</h2>
+        {{ range .paragraphs }}
+        <p{{ if .italic }} class="text-italic"{{ end }}>{{ .text }}</p>
+        {{ end }}
+    </div>
+</section>
+{{ end }}
+
+{{/* ── CTA / Consultation ── */}}
+{{ with .Params.consultation }}
+<section class="section" id="konsultacja">
+    <div class="content-block">
+        <h2>{{ .heading | safeHTML }}</h2>
+        {{ range .paragraphs }}
+        <p>{{ .text }}</p>
+        {{ end }}
+        <a href="{{ "kontakt/" | absURL }}" class="label cta-link">{{ .cta | default "Umów wizytę" }}</a>
+    </div>
+</section>
+{{ end }}
+
+{{ end }}

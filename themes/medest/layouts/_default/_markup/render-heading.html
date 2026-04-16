@@ -1,0 +1,7 @@
+{{- $level := .Level -}}
+{{- $anchor := .Anchor -}}
+{{- if eq $level 3 -}}
+<h2{{ with $anchor }} id="{{ . }}"{{ end }} class="page-subheading">{{ .Text | safeHTML }}</h2>
+{{- else -}}
+<h{{ $level }}{{ with $anchor }} id="{{ . }}"{{ end }}>{{ .Text | safeHTML }}</h{{ $level }}>
+{{- end -}}

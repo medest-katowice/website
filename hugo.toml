@@ -1,0 +1,87 @@
+baseURL = "https://medest.pl/"
+languageCode = "pl"
+title = "Medest — Gabinet Medycyny Estetycznej Katowice"
+theme = "medest"
+
+[params]
+  brand = "Medest"
+  headline = "Medycyna"
+  headline_italic = "Estetyczna"
+  footer_tagline = "Gabinet medycyny estetycznej w Katowicach — Dębowe Tarasy"
+  description = "Gabinet medycyny estetycznej w Katowicach, na osiedlu Dębowe Tarasy. Zabiegi anti-aging, modelowanie, mezoterapia i botoks. Gabinet prowadzony przez Adriannę Laskę."
+  phone = "+48 508 237 345"
+  phone_href = "+48508237345"
+  email = "kontakt@medest.pl"
+  address = "ul. Johna Baildona 24D/23, 40-115 Katowice"
+  doctor = "Adrianna Laska"
+  legal_business = "Indywidualna Praktyka Lekarska Lek. med. Adrianna Laska"
+  nip = "6491183733"
+  regon = "240136245"
+  dpo = "Monika Morawiec-Mrozińska"
+  dpo_email = "iod.medest@gmail.com"
+
+[permalinks]
+  [permalinks.page]
+    zabiegi = "/zabiegi/:slug/"
+    wskazania = "/wskazania/:slug/"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+disableKinds = ["taxonomy", "term"]
+canonifyURLs = true
+
+[sitemap]
+  changeFreq = "monthly"
+  priority = 0.5
+
+# ── Main navigation ──
+
+[[menus.main]]
+  name = "Zabiegi"
+  url = "/zabiegi/"
+  weight = 10
+
+[[menus.main]]
+  name = "Problemy"
+  url = "/wskazania/"
+  weight = 20
+
+[[menus.main]]
+  name = "O gabinecie"
+  url = "/o-gabinecie/"
+  weight = 30
+
+[[menus.main]]
+  name = "Bezpieczeństwo"
+  url = "/bezpieczenstwo/"
+  weight = 40
+
+[[menus.main]]
+  name = "Kontakt"
+  url = "/kontakt/"
+  weight = 50
+
+# ── Footer navigation ──
+
+[[menus.footer]]
+  name = "Cennik"
+  url = "/cennik/"
+  weight = 10
+
+[[menus.footer]]
+  name = "RODO"
+  url = "/klauzula-informacyjna-rodo/"
+  weight = 20
+
+[[menus.footer]]
+  name = "Ochrona małoletnich"
+  url = "/standardy-ochrony-maloletnich/"
+  weight = 30
+
+[[menus.footer]]
+  name = "Kontakt"
+  url = "/kontakt/"
+  weight = 40

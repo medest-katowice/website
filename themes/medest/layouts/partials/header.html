@@ -1,0 +1,19 @@
+{{ $phone := .Site.Params.phone }}
+{{ $phoneHref := .Site.Params.phone_href | default (replaceRE "[^0-9+]" "" $phone) }}
+<div class="header-anchor">
+    <div class="label header-label{{ if .IsHome }} header-label--home{{ end }}">
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Otwórz menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <a href="{{ .Site.Home.Permalink }}" class="header-brand-name">Medest</a>
+        <span class="header-brand-city">— Katowice</span>
+    </div>
+    <a href="tel:{{ $phoneHref }}" class="label header-phone" style="color: var(--text-primary);">{{ $phone }}</a>
+</div>
