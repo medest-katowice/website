@@ -1,0 +1,5 @@
+{{- $src := .Destination -}}
+{{- if hasPrefix $src "/" -}}
+  {{- $src = (strings.TrimPrefix "/" $src) | absURL -}}
+{{- end -}}
+<img src="{{ $src }}" alt="{{ .Text }}"{{ with .Title }} title="{{ . }}"{{ end }}>
