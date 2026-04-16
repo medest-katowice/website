@@ -27,7 +27,7 @@
 
     <nav class="nav-vertical" id="mobile-menu">
         {{ range .Site.Menus.main }}
-        <a href="{{ (strings.TrimPrefix "/" .URL) | absURL }}" class="label{{ if $.IsMenuCurrent "main" . }} active{{ end }}">{{ .Name }}</a>
+        <a href="{{ .URL }}" class="label{{ if $.IsMenuCurrent "main" . }} active{{ end }}">{{ .Name }}</a>
         {{ end }}
     </nav>
 </aside>
