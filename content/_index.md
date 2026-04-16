@@ -5,7 +5,7 @@ hero_subtitle: "Naturalne piękno podkreślone z&nbsp;precyzją i&nbsp;troską o
 
 philosophy:
   label: "Filozofia"
-  image: "/images/gabinet-hero.jpg"
+  image: "/images/gabinet-medest-katowice-sofa-logo.jpg"
   image_alt: "Gabinet Medest w Katowicach"
   heading: "Dyskretna<br><span class=\"text-italic\">Metamorfoza</span>"
   paragraphs:
@@ -45,7 +45,7 @@ problems:
 
 trust:
   label: "Dlaczego Medest"
-  image: "/images/gabinet-wnetrze.jpg"
+  image: "/images/gabinet-medest-katowice-zabiegowy.jpg"
   heading: "Gabinet<br><span class=\"text-italic\">Lekarski</span>"
   paragraphs:
     - text: "W gabinecie medest oferujemy nowoczesne zabiegi medycyny estetycznej poprawiające wygląd, kondycję skóry oraz redukujące objawy starzenia. Specjalizujemy się w korekcji twarzy, szyi oraz dekoltu."

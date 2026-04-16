@@ -60,14 +60,9 @@ canonifyURLs = true
   weight = 40
 
 [[menus.main]]
-  name = "Cennik"
-  url = "/cennik/"
-  weight = 45
-
-[[menus.main]]
   name = "Kontakt"
   url = "/kontakt/"
-  weight = 50
+  weight = 45
 
 # ── Footer navigation ──
 

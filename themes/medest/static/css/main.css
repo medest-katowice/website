@@ -433,6 +433,35 @@ body.nav-open .menu-toggle span:nth-child(3) { transform: rotate(-45deg); }
     margin-bottom: 0.5rem;
 }
 
+.about-doctor {
+    display: grid;
+    grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
+    gap: 2rem;
+    align-items: start;
+    max-width: 900px;
+    margin: 1.5rem 0 2.5rem;
+}
+
+.about-doctor__image,
+.about-doctor__image img,
+.about-doctor__content {
+    width: 100%;
+}
+
+.about-doctor__image {
+    margin: 0;
+}
+
+.about-doctor__image img {
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+}
+
+.about-doctor__content p {
+    max-width: none;
+    margin-bottom: 0;
+}
+
 .page-content strong {
     color: var(--text-primary);
     font-weight: 700;
@@ -445,6 +474,34 @@ body.nav-open .menu-toggle span:nth-child(3) { transform: rotate(-45deg); }
     text-decoration: underline;
     text-underline-offset: 0.18em;
     text-decoration-thickness: 1px;
+}
+
+.photo-gallery__hero {
+    max-width: 900px;
+    margin: 2rem 0 1rem;
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    max-width: 900px;
+    margin: 0 0 2rem;
+}
+
+.photo-gallery figure {
+    margin: 0;
+}
+
+.photo-gallery img,
+.photo-gallery__hero img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.photo-gallery__hero img {
+    aspect-ratio: 16 / 9;
 }
 
 /* ── Pricing table ── */
@@ -645,6 +702,11 @@ body.nav-open .menu-toggle span:nth-child(3) { transform: rotate(-45deg); }
         min-height: auto;
         padding: var(--space-md) 0;
         scroll-snap-align: none;
+    }
+
+    .about-doctor,
+    .photo-gallery {
+        grid-template-columns: 1fr;
     }
 
     .page-content--top {

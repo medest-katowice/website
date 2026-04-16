@@ -3,11 +3,20 @@ title: "O gabinecie"
 description: "Gabinet medycyny estetycznej Medest w Katowicach, na osiedlu Dębowe Tarasy. Adrianna Laska, certyfikowane preparaty i indywidualne podejście."
 label: "O nas"
 subtitle: "Medycyna estetyczna prowadzona przez lekarza, w atmosferze komfortu i dyskrecji."
+aliases:
+  - "/cennik/"
 ---
 
 ### Adrianna Laska
 
-Nazywam się **Adrianna Laska** i jestem dyplomowanym lekarzem medycyny estetycznej. Od 2005 roku prowadzę własny gabinet w Katowicach — na osiedlu **Dębowe Tarasy**, naprzeciw Silesia City Center.
+<div class="about-doctor">
+  <figure class="about-doctor__image">
+    {{< site-image src="/images/adrianna-laska-lekarz-medycyny-estetycznej-katowice.jpg" alt="Lek. med. Adrianna Laska" >}}
+  </figure>
+  <div class="about-doctor__content">
+    <p>Nazywam się <strong>Adrianna Laska</strong> i jestem dyplomowanym lekarzem medycyny estetycznej. Od 2005 roku prowadzę własny gabinet w Katowicach — na osiedlu <strong>Dębowe Tarasy</strong>, naprzeciw Silesia City Center.</p>
+  </div>
+</div>
 
 ### Zakres zabiegów
 
@@ -27,5 +36,6 @@ Gabinet znajduje się w Katowicach, przy ul. Johna Baildona 24D/23, na 6. piętr
 2. **Plan** — omówienie możliwości, metod i realistycznych efektów
 3. **Zabieg** — wykonanie procedury w komfortowych warunkach
 4. **Kontrola** — zalecenia pozabiegowe i możliwość kontaktu w razie pytań
+5. **Płatność** — wizytę można opłacić gotówką, kartą płatniczą lub bonem upominkowym
 
 Zapraszam do skorzystania z naszych usług.
