@@ -1,0 +1,15 @@
+{{- $src := .Get "src" -}}
+{{- $resolved := $src -}}
+{{- if hasPrefix $src "/" -}}
+  {{- $resolved = (strings.TrimPrefix "/" $src) | absURL -}}
+{{- end -}}
+<button
+  class="photo-gallery__trigger"
+  type="button"
+  data-gallery-item
+  data-gallery-src="{{ $resolved }}"
+  data-gallery-alt="{{ .Get "alt" }}"
+  aria-label="Powiększ zdjęcie: {{ .Get "alt" }}"
+>
+  <img src="{{ $resolved }}" alt="{{ .Get "alt" }}">
+</button>
