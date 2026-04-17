@@ -5,7 +5,7 @@
         <div class="contact-modal__header">
             <div>
                 <p class="label">Kontakt</p>
-                <h2 id="contact-modal-title">Napisz wiadomość</h2>
+                <h2 id="contact-modal-title" data-contact-modal-title data-title-default="Napisz wiadomość" data-title-success="Dziękujemy">Napisz wiadomość</h2>
             </div>
             <button type="button" class="contact-modal__close" aria-label="Zamknij formularz" data-close-contact-modal>
                 <span></span>
@@ -13,7 +13,7 @@
             </button>
         </div>
 
-        <p class="contact-modal__intro">Jeśli wolisz napisać zamiast dzwonić, zostaw wiadomość. Odpowiemy najszybciej, jak to możliwe.</p>
+        <p class="contact-modal__intro" data-contact-modal-intro>Jeśli wolisz napisać zamiast dzwonić, zostaw wiadomość. Odpowiemy najszybciej, jak to możliwe.</p>
 
         <form class="contact-form" action="{{ . }}" method="POST" data-contact-form>
             <div class="contact-form__grid">
@@ -49,6 +49,11 @@
 
             <button type="submit" class="label cta-link cta-link--button" data-contact-form-submit>Wyślij wiadomość</button>
         </form>
+
+        <div class="contact-modal__success" data-contact-form-success hidden>
+            <p class="contact-modal__success-message">Wiadomość została wysłana.</p>
+            <p>Dziękujemy za kontakt. Odpowiemy najszybciej, jak to możliwe. Jeśli sprawa jest pilna, prosimy o kontakt telefoniczny.</p>
+        </div>
     </div>
 </div>
 {{ end }}
