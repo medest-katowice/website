@@ -12,7 +12,9 @@
   var successPanel = modal.querySelector('[data-contact-form-success]');
   var triggers = document.querySelectorAll('.js-open-contact-modal');
   var closeButtons = modal.querySelectorAll('[data-close-contact-modal]');
-  var firstInput = modal.querySelector('input[name="name"]');
+  var firstInput = modal.querySelector('[data-contact-first-input]');
+  var inputs = form ? form.querySelectorAll('input, textarea') : [];
+  var inlineInputs = form ? form.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"]') : [];
   var menuToggle = document.querySelector('.menu-toggle');
   var defaultButtonLabel = submitButton ? submitButton.textContent : '';
   var defaultTitle = title ? title.dataset.titleDefault : '';
@@ -28,6 +30,20 @@
     if (!status) return;
     status.textContent = '';
     status.dataset.state = '';
+  }
+
+  function getValidationMessage(field) {
+    if (!field || !field.validity) return '';
+
+    if (field.validity.valueMissing) {
+      return field.dataset.errorRequired || 'To pole jest wymagane.';
+    }
+
+    if (field.validity.typeMismatch) {
+      return field.dataset.errorInvalid || 'Podaj prawidłową wartość.';
+    }
+
+    return '';
   }
 
   function setDefaultView() {
@@ -104,6 +120,33 @@
     button.addEventListener('click', closeModal);
   });
 
+  inlineInputs.forEach(function (input, index) {
+    input.addEventListener('keydown', function (event) {
+      if (event.key !== 'Enter') return;
+
+      event.preventDefault();
+
+      var nextField = inputs[index + 1];
+      if (nextField) {
+        nextField.focus();
+      }
+    });
+  });
+
+  inputs.forEach(function (field) {
+    field.addEventListener('invalid', function () {
+      field.setCustomValidity(getValidationMessage(field));
+    });
+
+    field.addEventListener('input', function () {
+      field.setCustomValidity('');
+    });
+
+    field.addEventListener('change', function () {
+      field.setCustomValidity('');
+    });
+  });
+
   window.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') closeModal();
   });
@@ -122,7 +165,7 @@
       var payload = new URLSearchParams();
 
       formData.forEach(function (value, key) {
-        if (typeof value === 'string') {
+        if (typeof value === 'string' && value.trim() !== '') {
           payload.append(key, value);
         }
       });
