@@ -136,7 +136,7 @@
         {{ range .paragraphs }}
         <p>{{ .text }}</p>
         {{ end }}
-        <a href="{{ "kontakt/" | absURL }}" class="label cta-link">{{ .cta | default "Umów wizytę" }}</a>
+        <button type="button" class="label cta-link cta-link--button js-open-contact-modal">{{ .cta | default "Umów wizytę" }}</button>
     </div>
 </section>
 {{ end }}

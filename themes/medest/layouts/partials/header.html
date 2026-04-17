@@ -12,8 +12,9 @@
             <span></span>
             <span></span>
         </button>
-        <a href="{{ .Site.Home.Permalink }}" class="header-brand-name">Medest</a>
-        <span class="header-brand-city">— Katowice</span>
+        <a href="{{ .Site.Home.Permalink }}" class="header-brand-name" aria-label="Medest">
+            {{ partial "logo-medest.html" (dict "class" "brand-logo brand-logo--header" "ariaLabel" "Medest") }}
+        </a>
     </div>
     <a href="tel:{{ $phoneHref }}" class="label header-phone" style="color: var(--text-primary);">{{ $phone }}</a>
 </div>

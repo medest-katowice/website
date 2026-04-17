@@ -5,7 +5,12 @@
 
     {{ with .Params.cta }}
     <div style="margin-top: 3rem;">
-        <a href="{{ (strings.TrimPrefix "/" (.url | default "/kontakt/")) | absURL }}" class="label cta-link">{{ .text | default "Umów konsultację" }}</a>
+        {{ $url := .url | default "/kontakt/" }}
+        {{ if eq $url "/kontakt/" }}
+        <button type="button" class="label cta-link cta-link--button js-open-contact-modal">{{ .text | default "Umów konsultację" }}</button>
+        {{ else }}
+        <a href="{{ (strings.TrimPrefix "/" $url) | absURL }}" class="label cta-link">{{ .text | default "Umów konsultację" }}</a>
+        {{ end }}
     </div>
     {{ end }}
 </div>

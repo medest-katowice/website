@@ -11,7 +11,7 @@ cta:
   url: "/kontakt/"
 ---
 
-Makijaż permanentny w Medest wykonuje współpracująca z nami **specjalistka tej dziedziny** - osoba, która zajmuje się wyłącznie pigmentacją i projektowaniem efektu dopasowanego do urody klientki. To osobna usługa realizowana w gabinecie, niezależnie od zabiegów wykonywanych przez lek. med. Adriannę Laskę i kosmetologa Monikę.
+Makijaż permanentny w <strong>medest</strong> wykonuje współpracująca z nami **specjalistka tej dziedziny** - osoba, która zajmuje się wyłącznie pigmentacją i projektowaniem efektu dopasowanego do urody klientki.
 
 ### Dla kogo jest ta usługa
 
@@ -23,7 +23,7 @@ Każda wizyta zaczyna się od rozmowy o oczekiwaniach oraz doboru efektu do rys�
 
 ### Komfort i organizacja wizyt
 
-Usługa realizowana jest w Medest w ustalonych terminach, a zapisy prowadzimy przez kontakt z gabinetem. Zależy nam na wygodzie klientek, dlatego sposób umawiania wizyty pozostaje prosty i przejrzysty.
+Usługa realizowana jest w <strong>medest</strong> w ustalonych terminach, a zapisy prowadzimy przez kontakt z gabinetem. Zależy nam na wygodzie klientek, dlatego sposób umawiania wizyty pozostaje prosty i przejrzysty.
 
 ### Dlaczego warto rozważyć makijaż permanentny
 

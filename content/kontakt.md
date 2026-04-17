@@ -1,8 +1,8 @@
 ---
 title: "Kontakt"
-description: "Kontakt z gabinetem medycyny estetycznej Medest w Katowicach. Telefon, e-mail, adres i wskazówki dojazdu."
+description: "Kontakt z gabinetem medycyny estetycznej Medest w Katowicach. Telefon, e-mail, formularz, adres i wskazówki dojazdu."
 label: "Kontakt"
-subtitle: "Zapraszamy do kontaktu telefonicznego lub mailowego."
+subtitle: "Zapraszamy do kontaktu telefonicznego, mailowego lub przez formularz."
 layout: "single"
 url: "/kontakt/"
 ---
@@ -23,6 +23,10 @@ url: "/kontakt/"
 <dt>GPS</dt>
 <dd>50.273, 19.008</dd>
 </dl>
+
+<p class="contact-form-cta">
+  <button type="button" class="label cta-link cta-link--button js-open-contact-modal">Otwórz formularz kontaktowy</button>
+</p>
 
 Gabinet znajduje się na osiedlu Dębowe Tarasy, naprzeciw Silesia City Center.
 
@@ -46,7 +50,7 @@ Gabinet znajduje się na osiedlu Dębowe Tarasy, naprzeciw Silesia City Center.
 
 ### Umawianie wizyt
 
-Gabinet przyjmuje pacjentów po wcześniejszym umówieniu wizyty. Najszybszą formą kontaktu jest kontakt telefoniczny.
+Gabinet przyjmuje pacjentów po wcześniejszym umówieniu wizyty. Najszybszą formą kontaktu pozostaje telefon, ale możesz też wygodnie skorzystać z formularza.
 
 ### Formy płatności
 

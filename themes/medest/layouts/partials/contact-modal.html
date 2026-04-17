@@ -1,0 +1,54 @@
+{{ with .Site.Params.contact_form_action }}
+<div class="contact-modal" id="contact-modal" aria-hidden="true">
+    <div class="contact-modal__backdrop" data-close-contact-modal></div>
+    <div class="contact-modal__panel" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+        <div class="contact-modal__header">
+            <div>
+                <p class="label">Kontakt</p>
+                <h2 id="contact-modal-title">Napisz wiadomość</h2>
+            </div>
+            <button type="button" class="contact-modal__close" aria-label="Zamknij formularz" data-close-contact-modal>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <p class="contact-modal__intro">Jeśli wolisz napisać zamiast dzwonić, zostaw wiadomość. Odpowiemy najszybciej, jak to możliwe.</p>
+
+        <form class="contact-form" action="{{ . }}" method="POST" data-contact-form>
+            <div class="contact-form__grid">
+                <label class="contact-form__field">
+                    <span>Imię i nazwisko</span>
+                    <input type="text" name="name" autocomplete="name" required>
+                </label>
+
+                <label class="contact-form__field">
+                    <span>Adres e-mail</span>
+                    <input type="email" name="email" autocomplete="email" required>
+                </label>
+            </div>
+
+            <label class="contact-form__field">
+                <span>Telefon <em>(opcjonalnie)</em></span>
+                <input type="tel" name="phone" autocomplete="tel">
+            </label>
+
+            <label class="contact-form__field">
+                <span>Wiadomość</span>
+                <textarea name="message" rows="6" required></textarea>
+            </label>
+
+            <input class="contact-form__honeypot" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <label class="contact-form__consent">
+                <input type="checkbox" name="privacy_consent" required>
+                <span>Zapoznałam/-em się z <a href="{{ "klauzula-informacyjna-rodo/" | absURL }}" target="_blank" rel="noopener noreferrer">klauzulą informacyjną RODO</a> i wyrażam zgodę na kontakt w celu odpowiedzi na wiadomość.</span>
+            </label>
+
+            <p class="contact-form__status" data-contact-form-status aria-live="polite"></p>
+
+            <button type="submit" class="label cta-link cta-link--button" data-contact-form-submit>Wyślij wiadomość</button>
+        </form>
+    </div>
+</div>
+{{ end }}
