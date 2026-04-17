@@ -20,7 +20,6 @@
   var defaultButtonLabel = submitButton ? submitButton.textContent : '';
   var defaultTitle = title ? title.dataset.titleDefault : '';
   var successTitle = title ? title.dataset.titleSuccess : '';
-  var turnstileWidgetId = null;
   var hasTurnstile = !!turnstileContainer;
 
   function syncMenuState() {
@@ -35,40 +34,10 @@
     status.dataset.state = '';
   }
 
-  function setSubmitState(disabled) {
-    if (!submitButton) return;
-    submitButton.disabled = disabled;
-  }
-
-  function resetTurnstile() {
-    if (!hasTurnstile || turnstileWidgetId === null || !window.turnstile) return;
-    window.turnstile.reset(turnstileWidgetId);
-    setSubmitState(true);
-  }
-
-  function renderTurnstile() {
-    if (!hasTurnstile || turnstileWidgetId !== null || !window.turnstile) return;
-
-    window.turnstile.ready(function () {
-      turnstileWidgetId = window.turnstile.render(turnstileContainer, {
-        sitekey: turnstileContainer.dataset.sitekey,
-        theme: 'dark',
-        callback: function () {
-          clearStatus();
-          setSubmitState(false);
-        },
-        'expired-callback': function () {
-          setSubmitState(true);
-          status.textContent = 'Weryfikacja antyspamowa wygasła. Potwierdź ją ponownie.';
-          status.dataset.state = 'error';
-        },
-        'error-callback': function () {
-          setSubmitState(true);
-          status.textContent = 'Nie udało się załadować weryfikacji antyspamowej. Odśwież stronę i spróbuj ponownie.';
-          status.dataset.state = 'error';
-        }
-      });
-    });
+  function getTurnstileResponse() {
+    if (!form) return '';
+    var responseField = form.querySelector('input[name="cf-turnstile-response"]');
+    return responseField ? responseField.value.trim() : '';
   }
 
   function setDefaultView() {
@@ -126,10 +95,6 @@
     if (form) {
       form.reset();
     }
-    if (hasTurnstile) {
-      renderTurnstile();
-      resetTurnstile();
-    }
 
     if (firstInput) {
       window.setTimeout(function () {
@@ -166,22 +131,29 @@
     if (event.key === 'Escape') closeModal();
   });
 
-  if (hasTurnstile) {
-    window.addEventListener('load', renderTurnstile);
-  }
-
   if (!form || !submitButton) return;
 
-  setSubmitState(hasTurnstile);
+  window.onMedestTurnstileSuccess = function () {
+    clearStatus();
+  };
+
+  window.onMedestTurnstileError = function () {
+    status.textContent = 'Nie udało się załadować weryfikacji antyspamowej. Odśwież stronę i spróbuj ponownie.';
+    status.dataset.state = 'error';
+  };
+
+  window.onMedestTurnstileExpired = function () {
+    status.textContent = 'Weryfikacja antyspamowa wygasła. Potwierdź ją ponownie.';
+    status.dataset.state = 'error';
+  };
 
   form.addEventListener('submit', async function (event) {
     event.preventDefault();
     clearStatus();
 
-    if (hasTurnstile && (!window.turnstile || turnstileWidgetId === null || !window.turnstile.getResponse(turnstileWidgetId))) {
+    if (hasTurnstile && !getTurnstileResponse()) {
       status.textContent = 'Potwierdź, że nie jesteś robotem, a potem wyślij formularz.';
       status.dataset.state = 'error';
-      setSubmitState(true);
       return;
     }
 
@@ -213,16 +185,12 @@
 
       clearStatus();
       setSuccessView();
-      resetTurnstile();
     } catch (error) {
       setDefaultView();
       status.textContent = 'Nie udało się wysłać wiadomości. Spróbuj ponownie albo skontaktuj się telefonicznie.';
       status.dataset.state = 'error';
-      resetTurnstile();
     } finally {
-      if (!hasTurnstile) {
-        submitButton.disabled = false;
-      }
+      submitButton.disabled = false;
       submitButton.textContent = defaultButtonLabel;
     }
   });

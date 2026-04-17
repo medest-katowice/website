@@ -61,7 +61,7 @@
     }
 
     function findCheckbox(key) {
-        return root.querySelector(`[data-consent-checkbox="${key}"]`);
+        return Array.from(root.querySelectorAll("[data-consent-checkbox]")).find((checkbox) => checkbox.getAttribute("data-consent-checkbox") === key);
     }
 
     function syncCheckboxes(consent) {
