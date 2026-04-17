@@ -123,7 +123,20 @@
     refreshAfterLayout(20);
   }, { passive: true });
 
-  window.addEventListener('pageshow', function () {
+  window.addEventListener('pageshow', function (e) {
+    if (e.persisted) {
+      // Restored from back-forward cache. The inline opacity from before
+      // caching is still correct. Cancel any pending rAF — it would read
+      // scrollY = 0 (not yet restored) and flash the separator to full
+      // opacity. The scroll event that fires once the browser finishes
+      // restoring the scroll position will trigger scheduleRefresh.
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+        rafId = 0;
+      }
+      trailingFrames = 0;
+      return;
+    }
     refreshAfterLayout(20);
   });
 
