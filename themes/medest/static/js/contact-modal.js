@@ -7,6 +7,7 @@
   var form = modal.querySelector('[data-contact-form]');
   var status = modal.querySelector('[data-contact-form-status]');
   var submitButton = modal.querySelector('[data-contact-form-submit]');
+  var cancelButton = modal.querySelector('[data-contact-form-cancel]');
   var title = modal.querySelector('[data-contact-modal-title]');
   var intro = modal.querySelector('[data-contact-modal-intro]');
   var successPanel = modal.querySelector('[data-contact-form-success]');
@@ -38,6 +39,15 @@
     if (!form) return '';
     var responseField = form.querySelector('input[name="cf-turnstile-response"]');
     return responseField ? responseField.value.trim() : '';
+  }
+
+  function resetFormState() {
+    clearStatus();
+    setDefaultView();
+
+    if (form) {
+      form.reset();
+    }
   }
 
   function setDefaultView() {
@@ -90,11 +100,7 @@
     syncMenuState();
     document.body.classList.add('contact-form-open');
     modal.setAttribute('aria-hidden', 'false');
-    setDefaultView();
-    clearStatus();
-    if (form) {
-      form.reset();
-    }
+    resetFormState();
 
     if (firstInput) {
       window.setTimeout(function () {
@@ -113,6 +119,13 @@
   closeButtons.forEach(function (button) {
     button.addEventListener('click', closeModal);
   });
+
+  if (cancelButton) {
+    cancelButton.addEventListener('click', function () {
+      resetFormState();
+      closeModal();
+    });
+  }
 
   inlineInputs.forEach(function (input, index) {
     input.addEventListener('keydown', function (event) {

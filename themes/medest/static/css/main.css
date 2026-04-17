@@ -1168,10 +1168,20 @@ body.contact-form-open .contact-modal {
 .contact-form__turnstile {
     display: flex;
     justify-content: flex-start;
+    width: min(100%, 320px);
+    padding: 1px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.02);
 }
 
 .contact-form__turnstile > div {
+    width: 100%;
     min-height: 65px;
+}
+
+.contact-form__turnstile iframe {
+    display: block;
+    filter: grayscale(0.18) saturate(0.82) brightness(1.04);
 }
 
 .contact-form__status {
@@ -1188,11 +1198,18 @@ body.contact-form-open .contact-modal {
     color: #f3b0b0;
 }
 
+.contact-form__actions {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+}
+
 .contact-form__submit {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    align-self: flex-start;
     padding: 0.95rem 1.35rem;
     border: 1px solid rgba(255, 255, 255, 0.24);
     background: transparent;
@@ -1217,6 +1234,29 @@ body.contact-form-open .contact-modal {
 .contact-form__submit:disabled {
     opacity: 0.65;
     cursor: wait;
+}
+
+.contact-form__cancel {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.95rem 1.35rem;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--text-muted);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.contact-form__cancel:hover,
+.contact-form__cancel:focus-visible {
+    color: var(--text-primary);
+    outline: none;
 }
 
 .contact-modal__success {
