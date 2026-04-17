@@ -84,8 +84,3 @@ canonifyURLs = true
   name = "Ochrona małoletnich"
   url = "/standardy-ochrony-maloletnich/"
   weight = 20
-
-[[menus.footer]]
-  name = "Kontakt"
-  url = "/kontakt/"
-  weight = 30
