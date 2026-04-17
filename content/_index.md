@@ -43,7 +43,7 @@ problems:
 
 trust:
   label: "Dlaczego Medest"
-  heading: "Gabinet<br><span class=\"text-italic\">Lekarski</span>"
+  heading: "Lekarz<br>medycyny estetycznej"
   paragraphs:
     - text: "W gabinecie <strong>medest</strong> oferujemy nowoczesne zabiegi medycyny estetycznej poprawiające wygląd, kondycję skóry oraz redukujące objawy starzenia. Specjalizujemy się w korekcji twarzy, szyi oraz dekoltu."
     - text: "Podnosimy kwalifikacje podczas szkoleń zaawansowanych technik, a zabiegi wykonujemy z zastosowaniem certyfikowanych preparatów zatwierdzonych przez Food and Drug Administration (FDA)."

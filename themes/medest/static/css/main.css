@@ -121,7 +121,8 @@ img {
 }
 
 .menu-toggle {
-    display: none;
+    position: relative;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 1.9rem;
@@ -178,7 +179,7 @@ body.nav-open .menu-toggle span:nth-child(3) { transform: rotate(-45deg); }
     transform: translateX(-50%);
     width: 100%;
     height: 100vh;
-    z-index: -1;
+    z-index: 10;
     pointer-events: none;
     color: var(--text-primary);
     transition: opacity 0.1s linear;
@@ -186,12 +187,8 @@ body.nav-open .menu-toggle span:nth-child(3) { transform: rotate(-45deg); }
 
 @media (min-width: 1025px) {
     .separator {
-        left: 40%;
+        left: 35%;
     }
-}
-
-.fixed-left--page .separator {
-    z-index: 99;
 }
 
 .separator svg {
@@ -231,15 +228,33 @@ body.nav-open .menu-toggle span:nth-child(3) { transform: rotate(-45deg); }
 }
 
 .nav-vertical {
+    position: fixed;
+    inset: 0;
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    gap: 1.5rem;
+    padding: 6rem 1.5rem 2rem;
+    text-align: center;
+    background: rgba(18, 18, 18, 0.97);
+    z-index: 180;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
 
-.nav-vertical--home {
-    position: absolute;
-    left: 3rem;
-    bottom: 3rem;
+body.nav-open .nav-vertical {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.nav-vertical a {
+    font-size: 0.95rem;
+    letter-spacing: 0.2em;
+    color: var(--text-primary);
 }
 
 .nav-vertical a.active {
@@ -349,6 +364,11 @@ body.nav-open .menu-toggle span:nth-child(3) { transform: rotate(-45deg); }
     font-size: 1.15rem;
     color: var(--text-muted);
     margin-bottom: 1.5rem;
+}
+
+.section .content-block strong {
+    color: #fff;
+    font-weight: 600;
 }
 
 /* ── Service list ── */
@@ -1114,8 +1134,6 @@ body.lightbox-open .scroll-right {
     }
 
     .menu-toggle {
-        position: relative;
-        display: inline-flex;
         flex: 0 0 auto;
     }
 
@@ -1123,34 +1141,6 @@ body.lightbox-open .scroll-right {
         margin-left: auto;
         white-space: nowrap;
         text-align: right;
-    }
-
-    .nav-vertical {
-        position: fixed;
-        inset: 0;
-        min-height: 100vh;
-        justify-content: center;
-        align-items: center;
-        gap: 1.5rem;
-        padding: 6rem 1.5rem 2rem;
-        text-align: center;
-        background: rgba(18, 18, 18, 0.97);
-        z-index: 180;
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-    }
-
-    body.nav-open .nav-vertical {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-    }
-
-    body.nav-open .nav-vertical a {
-        font-size: 0.95rem;
-        letter-spacing: 0.2em;
-        color: var(--text-primary);
     }
 
     .scroll-right {

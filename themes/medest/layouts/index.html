@@ -42,10 +42,6 @@
 <section class="section" id="wskazania">
     <div class="content-block">
         <span class="label">{{ .label | default "Problemy" }}</span>
-        <h2>{{ .heading | safeHTML }}</h2>
-        {{ range .paragraphs }}
-        <p>{{ .text }}</p>
-        {{ end }}
     </div>
     <ul class="service-list">
         {{ range $i, $item := .items }}
