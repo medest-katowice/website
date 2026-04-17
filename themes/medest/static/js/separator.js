@@ -24,6 +24,11 @@
     onScroll();
   }
 
+  function refreshSeparator() {
+    fadeEnd = window.innerHeight * 0.75;
+    onScroll();
+  }
+
   function onScroll() {
     var scrollY = getScrollY();
     var t = Math.min(scrollY / fadeEnd, 1);
@@ -37,5 +42,10 @@
   scroller.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onResize, { passive: true });
-  onScroll();
+  window.addEventListener('pageshow', function () {
+    requestAnimationFrame(function () {
+      requestAnimationFrame(refreshSeparator);
+    });
+  });
+  refreshSeparator();
 })();
