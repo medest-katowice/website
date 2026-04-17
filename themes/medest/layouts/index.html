@@ -25,8 +25,15 @@
         <li class="service-item">
             <a href="{{ (strings.TrimPrefix "/" $item.url) | absURL }}">
                 <span class="service-number">{{ printf "%02d" (add $i 1) }}</span>
-                <h2 class="service-title">{{ $item.title }}</h2>
-                <p class="service-description">{{ $item.description }}</p>
+                <div class="service-title-row">
+                    <h2 class="service-title">{{ $item.title }}</h2>
+                    {{ with $item.badge }}
+                    <span class="service-badge">{{ . }}</span>
+                    {{ end }}
+                </div>
+                {{ with $item.description }}
+                <p class="service-description">{{ . }}</p>
+                {{ end }}
             </a>
         </li>
         {{ end }}
@@ -48,13 +55,57 @@
         <li class="service-item">
             <a href="{{ (strings.TrimPrefix "/" $item.url) | absURL }}">
                 <span class="service-number">{{ printf "%02d" (add $i 1) }}</span>
-                <h2 class="service-title">{{ $item.title }}</h2>
+                <div class="service-title-row">
+                    <h2 class="service-title">{{ $item.title }}</h2>
+                    {{ with $item.badge }}
+                    <span class="service-badge">{{ . }}</span>
+                    {{ end }}
+                </div>
+                {{ with $item.description }}
+                <p class="service-description">{{ . }}</p>
+                {{ end }}
             </a>
         </li>
         {{ end }}
     </ul>
     <div style="margin-top: 2rem;">
         <a href="{{ "wskazania/" | absURL }}" class="label cta-link">Wszystkie wskazania</a>
+    </div>
+</section>
+{{ end }}
+
+{{/* ── Permanent makeup ── */}}
+{{ with .Params.permanent_makeup }}
+<section class="section" id="makijaz-permanentny">
+    <div class="content-block">
+        <span class="label">{{ .label | default "Makijaż permanentny" }}</span>
+        {{ with .heading }}
+        <h2>{{ . | safeHTML }}</h2>
+        {{ end }}
+        {{ range .paragraphs }}
+        <p>{{ .text | safeHTML }}</p>
+        {{ end }}
+    </div>
+    <ul class="service-list">
+        {{ range $i, $item := .items }}
+        <li class="service-item">
+            <a href="{{ (strings.TrimPrefix "/" $item.url) | absURL }}">
+                <span class="service-number">{{ printf "%02d" (add $i 1) }}</span>
+                <div class="service-title-row">
+                    <h2 class="service-title">{{ $item.title }}</h2>
+                    {{ with $item.badge }}
+                    <span class="service-badge">{{ . }}</span>
+                    {{ end }}
+                </div>
+                {{ with $item.description }}
+                <p class="service-description">{{ . }}</p>
+                {{ end }}
+            </a>
+        </li>
+        {{ end }}
+    </ul>
+    <div style="margin-top: 2rem;">
+        <a href="{{ "makijaz-permanentny/" | absURL }}" class="label cta-link">{{ .cta | default "Dowiedz się więcej" }}</a>
     </div>
 </section>
 {{ end }}

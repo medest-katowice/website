@@ -52,6 +52,11 @@ canonifyURLs = true
   weight = 20
 
 [[menus.main]]
+  name = "Makijaż permanentny"
+  url = "/makijaz-permanentny/"
+  weight = 25
+
+[[menus.main]]
   name = "O gabinecie"
   url = "/o-gabinecie/"
   weight = 30

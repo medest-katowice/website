@@ -269,7 +269,6 @@ body.nav-open .nav-vertical {
     overflow-y: auto;
     padding: 0 4rem;
     scroll-behavior: smooth;
-    scroll-snap-type: y proximity;
     scrollbar-gutter: stable;
     overscroll-behavior-y: contain;
 }
@@ -297,7 +296,6 @@ body.nav-open .nav-vertical {
     justify-content: center;
     padding: var(--space-lg) 0;
     border-bottom: 1px solid rgba(255,255,255,0.05);
-    scroll-snap-align: start;
 }
 
 .section:last-child {
@@ -406,10 +404,34 @@ body.nav-open .nav-vertical {
     transition: color 0.25s ease;
 }
 
+.service-title-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.service-title-row .service-title {
+    margin-bottom: 0;
+}
+
 .service-description {
     color: var(--text-muted);
     font-size: 1rem;
     transition: color 0.25s ease;
+    margin-top: 0.5rem;
+}
+
+.service-badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    background: #fff;
+    color: #121212;
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
 }
 
 .service-item a:hover .service-title,
@@ -1148,13 +1170,11 @@ body.lightbox-open .scroll-right {
         height: auto;
         overflow: visible;
         padding: 0 2rem;
-        scroll-snap-type: none;
         scrollbar-gutter: auto;
     }
     .section {
         min-height: auto;
         padding: var(--space-md) 0;
-        scroll-snap-align: none;
     }
 
     .photo-gallery {

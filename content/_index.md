@@ -28,18 +28,32 @@ treatments:
 
 problems:
   label: "Z czym pomagamy"
-  heading: "Twój<br><span class=\"text-italic\">Problem</span>"
-  paragraphs:
-    - text: "Nie musisz znać nazw zabiegów. Powiedz nam, co Cię niepokoi — dobierzemy najlepszą metodę podczas konsultacji."
   items:
     - title: "Zmarszczki i utrata jędrności"
+      description: "Dobór metod poprawiających napięcie, gęstość i świeżość skóry"
       url: "/wskazania/usuwanie-zmarszczek/"
     - title: "Przebarwienia i nierówny koloryt"
+      description: "Wyrównanie kolorytu i plan terapii dopasowany do rodzaju zmian"
       url: "/wskazania/usuwanie-przebarwien/"
     - title: "Cienie i zapadnięcia pod oczami"
+      description: "Subtelna poprawa okolicy oka z zachowaniem naturalnego efektu"
       url: "/wskazania/cienie-pod-oczami/"
     - title: "Trądzik i blizny potrądzikowe"
+      description: "Terapie wspierające wygładzenie skóry i poprawę jej struktury"
       url: "/wskazania/leczenie-tradziku/"
+
+permanent_makeup:
+  label: "Nowa oferta"
+  heading: "Makijaż<br>permanentny"
+  paragraphs:
+    - text: "W Medest dostępny jest także <strong>makijaż permanentny</strong> wykonywany przez współpracującą z nami specjalistkę, która koncentruje się wyłącznie na tej dziedzinie."
+    - text: "To propozycja dla osób, które chcą podkreślić urodę w sposób trwały, precyzyjny i dopasowany do codziennego stylu."
+  items:
+    - title: "Makijaż permanentny"
+      badge: "Nowość"
+      description: "Indywidualnie projektowany efekt wykonywany przez doświadczoną linergistkę współpracującą z Medest"
+      url: "/makijaz-permanentny/"
+  cta: "Poznaj ofertę"
 
 trust:
   label: "Dlaczego Medest"
