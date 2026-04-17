@@ -42,11 +42,12 @@
         </main>
     </div>
 
+    <script>{{ readFile "themes/medest/static/js/separator.js" | safeJS }}</script>
+    <script>{{ readFile "themes/medest/static/js/navigation.js" | safeJS }}</script>
+
     {{ partial "contact-modal.html" . }}
     {{ partial "consent.html" . }}
 
-    <script src="{{ "js/separator.js" | relURL }}" defer></script>
-    <script src="{{ "js/navigation.js" | relURL }}" defer></script>
     <script src="{{ "js/contact-modal.js" | relURL }}" defer></script>
     <script src="{{ "js/gallery-lightbox.js" | relURL }}" defer></script>
 </body>

@@ -7,6 +7,9 @@
   var mobileLayout = window.matchMedia('(max-width: 1024px)');
   var viewport = window.visualViewport || null;
   var rafId = 0;
+  var layoutRafId = 0;
+  var layoutFollowupRafId = 0;
+  var restoreRafId = 0;
   var trailingFrames = 0;
   var lastScrollY = -1;
 
@@ -58,6 +61,30 @@
     root.style.setProperty('--pane-divider-opacity', progress.toFixed(3));
   }
 
+  function clearScheduledRefreshes() {
+    if (rafId) {
+      cancelAnimationFrame(rafId);
+      rafId = 0;
+    }
+
+    if (layoutRafId) {
+      cancelAnimationFrame(layoutRafId);
+      layoutRafId = 0;
+    }
+
+    if (layoutFollowupRafId) {
+      cancelAnimationFrame(layoutFollowupRafId);
+      layoutFollowupRafId = 0;
+    }
+
+    if (restoreRafId) {
+      cancelAnimationFrame(restoreRafId);
+      restoreRafId = 0;
+    }
+
+    trailingFrames = 0;
+  }
+
   function runRefreshLoop() {
     rafId = 0;
 
@@ -82,13 +109,51 @@
   }
 
   function refreshAfterLayout(frameBuffer) {
-    scheduleRefresh(frameBuffer || 12);
+    var frames = frameBuffer || 12;
 
-    requestAnimationFrame(function () {
-      requestAnimationFrame(function () {
-        scheduleRefresh(frameBuffer || 12);
+    scheduleRefresh(frames);
+
+    if (layoutRafId) {
+      cancelAnimationFrame(layoutRafId);
+      layoutRafId = 0;
+    }
+
+    if (layoutFollowupRafId) {
+      cancelAnimationFrame(layoutFollowupRafId);
+      layoutFollowupRafId = 0;
+    }
+
+    layoutRafId = requestAnimationFrame(function () {
+      layoutRafId = 0;
+      layoutFollowupRafId = requestAnimationFrame(function () {
+        layoutFollowupRafId = 0;
+        scheduleRefresh(frames);
       });
     });
+  }
+
+  function waitForRestoredScroll(frameBuffer) {
+    var frames = frameBuffer || 20;
+    var targetScrollY = lastScrollY;
+    var attemptsRemaining = 24;
+
+    function poll() {
+      restoreRafId = 0;
+
+      var scrollY = getScrollY();
+      var restored = targetScrollY < 0 || Math.abs(scrollY - targetScrollY) <= 0.5;
+
+      if (restored || attemptsRemaining <= 0) {
+        lastScrollY = scrollY;
+        refreshAfterLayout(frames);
+        return;
+      }
+
+      attemptsRemaining -= 1;
+      restoreRafId = requestAnimationFrame(poll);
+    }
+
+    restoreRafId = requestAnimationFrame(poll);
   }
 
   scroller.addEventListener('scroll', function () {
@@ -123,18 +188,18 @@
     refreshAfterLayout(20);
   }, { passive: true });
 
+  window.addEventListener('pagehide', function () {
+    clearScheduledRefreshes();
+  });
+
   window.addEventListener('pageshow', function (e) {
+    clearScheduledRefreshes();
+
     if (e.persisted) {
-      // Restored from back-forward cache. The inline opacity from before
-      // caching is still correct. Cancel any pending rAF — it would read
-      // scrollY = 0 (not yet restored) and flash the separator to full
-      // opacity. The scroll event that fires once the browser finishes
-      // restoring the scroll position will trigger scheduleRefresh.
-      if (rafId) {
-        cancelAnimationFrame(rafId);
-        rafId = 0;
-      }
-      trailingFrames = 0;
+      // A bfcache restore can resume pending rAF callbacks before Safari
+      // finishes restoring the previous scroll position. Keep the cached
+      // opacity intact until the scroll position catches back up.
+      waitForRestoredScroll(20);
       return;
     }
     refreshAfterLayout(20);
@@ -161,5 +226,6 @@
   }
 
   refreshSeparator();
+  lastScrollY = getScrollY();
   refreshAfterLayout(16);
 })();
