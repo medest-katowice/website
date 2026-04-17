@@ -26,27 +26,6 @@ body {
     -webkit-font-smoothing: antialiased;
     overflow: hidden;
     line-height: 1.5;
-    timeline-scope: --page-scroll;
-}
-
-@keyframes separator-fade-out {
-    from {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0;
-    }
-}
-
-@keyframes divider-fade-in {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
 }
 
 /* ── Typography ── */
@@ -235,6 +214,7 @@ body.nav-open .menu-toggle span:nth-child(3) { transform: rotate(-45deg); }
     background: rgba(255, 255, 255, 0.14);
     opacity: var(--pane-divider-opacity);
     pointer-events: none;
+    will-change: opacity;
 }
 
 .fixed-left .nav-vertical,
@@ -259,6 +239,7 @@ body.nav-open .menu-toggle span:nth-child(3) { transform: rotate(-45deg); }
     pointer-events: none;
     color: var(--text-primary);
     opacity: 1;
+    will-change: opacity;
 }
 
 @media (min-width: 1025px) {
@@ -357,34 +338,6 @@ body.nav-open .nav-vertical {
     scroll-behavior: smooth;
     scrollbar-gutter: stable;
     overscroll-behavior-y: contain;
-}
-
-@supports (animation-timeline: scroll()) and (timeline-scope: --page-scroll) {
-    .scroll-right {
-        scroll-timeline: --page-scroll block;
-    }
-
-    .separator,
-    .fixed-left::after {
-        animation-duration: 1ms;
-        animation-timing-function: linear;
-        animation-fill-mode: both;
-        animation-timeline: --page-scroll;
-        animation-range: 0 55vh;
-    }
-
-    .separator {
-        animation-name: separator-fade-out;
-    }
-
-    .fixed-left::after {
-        animation-name: divider-fade-in;
-    }
-}
-
-.separator-js-fallback .separator,
-.separator-js-fallback .fixed-left::after {
-    animation: none;
 }
 
 .dot {
@@ -1622,20 +1575,6 @@ body.contact-form-open .contact-modal {
         scrollbar-gutter: auto;
     }
 
-    @supports (animation-timeline: scroll()) {
-        .scroll-right {
-            scroll-timeline: none;
-        }
-
-    .separator {
-            animation-duration: 1ms;
-            animation-timing-function: linear;
-            animation-fill-mode: both;
-            animation-name: separator-fade-out;
-            animation-timeline: scroll(root block);
-            animation-range: 0 55vh;
-        }
-    }
     .section {
         min-height: auto;
         padding: var(--space-md) 0;

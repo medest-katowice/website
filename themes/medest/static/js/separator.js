@@ -7,26 +7,13 @@
   var mobileLayout = window.matchMedia('(max-width: 1024px)');
   var viewport = window.visualViewport || null;
   var rafId = 0;
-  var layoutRafId = 0;
-  var layoutFollowupRafId = 0;
   var restoreRafId = 0;
-  var trailingFrames = 0;
-  var lastScrollY = -1;
+  var savedScrollY = -1;
+  var isRestoring = false;
 
   if (!sep || !scroller) return;
 
-  function isIOSWebKit() {
-    var ua = navigator.userAgent;
-    var isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-    var isWebKit = /WebKit/.test(ua) && !/CriOS|FxiOS|EdgiOS/.test(ua);
-    return isIOS && isWebKit;
-  }
-
-  if (!isIOSWebKit()) return;
-
-  document.body.classList.add('separator-js-fallback');
-
-  function getMobileScrollY() {
+  function getPageScrollY() {
     var scrollingElement = document.scrollingElement || document.documentElement;
     var candidates = [
       window.scrollY,
@@ -43,99 +30,58 @@
     }, 0);
   }
 
+  function usesPageScroll() {
+    return mobileLayout.matches;
+  }
+
   function getScrollY() {
-    if (mobileLayout.matches) {
-      return getMobileScrollY();
+    if (usesPageScroll()) {
+      return getPageScrollY();
     }
 
     return scroller.scrollTop;
   }
 
-  function refreshSeparator() {
+  function applyProgress(scrollY) {
     var fadeEnd = Math.max(window.innerHeight * 0.55, 1);
-    var scrollY = getScrollY();
-    var t = Math.min(scrollY / fadeEnd, 1);
+    var t = Math.min(Math.max(scrollY / fadeEnd, 0), 1);
     var progress = t * t;
 
     sep.style.opacity = String(1 - progress);
     root.style.setProperty('--pane-divider-opacity', progress.toFixed(3));
+    savedScrollY = scrollY;
   }
 
-  function clearScheduledRefreshes() {
+  function refreshSeparator() {
+    applyProgress(getScrollY());
+  }
+
+  function cancelScheduledRefreshes() {
     if (rafId) {
       cancelAnimationFrame(rafId);
       rafId = 0;
-    }
-
-    if (layoutRafId) {
-      cancelAnimationFrame(layoutRafId);
-      layoutRafId = 0;
-    }
-
-    if (layoutFollowupRafId) {
-      cancelAnimationFrame(layoutFollowupRafId);
-      layoutFollowupRafId = 0;
     }
 
     if (restoreRafId) {
       cancelAnimationFrame(restoreRafId);
       restoreRafId = 0;
     }
-
-    trailingFrames = 0;
   }
 
-  function runRefreshLoop() {
-    rafId = 0;
+  function scheduleRefresh() {
+    if (isRestoring || rafId) return;
 
-    var scrollY = getScrollY();
-    var moved = Math.abs(scrollY - lastScrollY) > 0.5;
-
-    lastScrollY = scrollY;
-    refreshSeparator();
-
-    if (moved || trailingFrames > 0) {
-      trailingFrames = Math.max(trailingFrames - 1, 0);
-      rafId = requestAnimationFrame(runRefreshLoop);
-    }
-  }
-
-  function scheduleRefresh(frameBuffer) {
-    trailingFrames = Math.max(trailingFrames, frameBuffer || 6);
-
-    if (!rafId) {
-      rafId = requestAnimationFrame(runRefreshLoop);
-    }
-  }
-
-  function refreshAfterLayout(frameBuffer) {
-    var frames = frameBuffer || 12;
-
-    scheduleRefresh(frames);
-
-    if (layoutRafId) {
-      cancelAnimationFrame(layoutRafId);
-      layoutRafId = 0;
-    }
-
-    if (layoutFollowupRafId) {
-      cancelAnimationFrame(layoutFollowupRafId);
-      layoutFollowupRafId = 0;
-    }
-
-    layoutRafId = requestAnimationFrame(function () {
-      layoutRafId = 0;
-      layoutFollowupRafId = requestAnimationFrame(function () {
-        layoutFollowupRafId = 0;
-        scheduleRefresh(frames);
-      });
+    rafId = requestAnimationFrame(function () {
+      rafId = 0;
+      refreshSeparator();
     });
   }
 
-  function waitForRestoredScroll(frameBuffer) {
-    var frames = frameBuffer || 20;
-    var targetScrollY = lastScrollY;
-    var attemptsRemaining = 24;
+  function waitForRestoredScroll() {
+    var targetScrollY = savedScrollY;
+    var attemptsRemaining = 60;
+
+    isRestoring = true;
 
     function poll() {
       restoreRafId = 0;
@@ -144,8 +90,8 @@
       var restored = targetScrollY < 0 || Math.abs(scrollY - targetScrollY) <= 0.5;
 
       if (restored || attemptsRemaining <= 0) {
-        lastScrollY = scrollY;
-        refreshAfterLayout(frames);
+        isRestoring = false;
+        applyProgress(scrollY);
         return;
       }
 
@@ -156,76 +102,43 @@
     restoreRafId = requestAnimationFrame(poll);
   }
 
-  scroller.addEventListener('scroll', function () {
-    scheduleRefresh(8);
-  }, { passive: true });
-
-  window.addEventListener('scroll', function () {
-    scheduleRefresh(8);
-  }, { passive: true });
-
-  window.addEventListener('resize', function () {
-    refreshAfterLayout(14);
-  }, { passive: true });
-
-  window.addEventListener('orientationchange', function () {
-    refreshAfterLayout(18);
-  }, { passive: true });
-
-  window.addEventListener('touchstart', function () {
-    scheduleRefresh(10);
-  }, { passive: true });
-
-  window.addEventListener('touchmove', function () {
-    scheduleRefresh(10);
-  }, { passive: true });
-
-  window.addEventListener('touchend', function () {
-    scheduleRefresh(16);
-  }, { passive: true });
+  scroller.addEventListener('scroll', scheduleRefresh, { passive: true });
+  window.addEventListener('scroll', scheduleRefresh, { passive: true });
+  window.addEventListener('resize', scheduleRefresh, { passive: true });
+  window.addEventListener('orientationchange', scheduleRefresh, { passive: true });
 
   window.addEventListener('load', function () {
-    refreshAfterLayout(20);
+    scheduleRefresh();
   }, { passive: true });
 
   window.addEventListener('pagehide', function () {
-    clearScheduledRefreshes();
+    savedScrollY = getScrollY();
+    isRestoring = false;
+    cancelScheduledRefreshes();
   });
 
-  window.addEventListener('pageshow', function (e) {
-    clearScheduledRefreshes();
+  window.addEventListener('pageshow', function (event) {
+    cancelScheduledRefreshes();
 
-    if (e.persisted) {
-      // A bfcache restore can resume pending rAF callbacks before Safari
-      // finishes restoring the previous scroll position. Keep the cached
-      // opacity intact until the scroll position catches back up.
-      waitForRestoredScroll(20);
+    if (event.persisted) {
+      waitForRestoredScroll();
       return;
     }
-    refreshAfterLayout(20);
+
+    isRestoring = false;
+    scheduleRefresh();
   });
 
   if (viewport) {
-    viewport.addEventListener('scroll', function () {
-      scheduleRefresh(10);
-    }, { passive: true });
-
-    viewport.addEventListener('resize', function () {
-      refreshAfterLayout(16);
-    }, { passive: true });
+    viewport.addEventListener('scroll', scheduleRefresh, { passive: true });
+    viewport.addEventListener('resize', scheduleRefresh, { passive: true });
   }
 
   if (typeof mobileLayout.addEventListener === 'function') {
-    mobileLayout.addEventListener('change', function () {
-      refreshAfterLayout(12);
-    });
+    mobileLayout.addEventListener('change', scheduleRefresh);
   } else if (typeof mobileLayout.addListener === 'function') {
-    mobileLayout.addListener(function () {
-      refreshAfterLayout(12);
-    });
+    mobileLayout.addListener(scheduleRefresh);
   }
 
   refreshSeparator();
-  lastScrollY = getScrollY();
-  refreshAfterLayout(16);
 })();
