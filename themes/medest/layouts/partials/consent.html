@@ -51,7 +51,7 @@
 window.medestConsentConfig = {
     cookieName: "medest-consent",
     expirationDays: 180,
-    scriptBase: {{ "js/" | absURL | jsonify }},
+    scriptBase: {{ "js/" | relURL | jsonify }},
     measurementId: {{ $measurementID | jsonify }},
     items: [
         {{- range $index, $item := $items -}}
@@ -65,5 +65,5 @@ window.medestConsentConfig = {
     ]
 };
 </script>
-<script src="{{ "js/consent.js" | absURL }}" defer></script>
+<script src="{{ "js/consent.js" | relURL }}" defer></script>
 {{ end }}

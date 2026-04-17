@@ -1,7 +1,7 @@
 {{- $src := .Get "src" -}}
 {{- $resolved := $src -}}
 {{- if hasPrefix $src "/" -}}
-  {{- $resolved = (strings.TrimPrefix "/" $src) | absURL -}}
+  {{- $resolved = (strings.TrimPrefix "/" $src) | relURL -}}
 {{- end -}}
 <button
   class="lightbox-trigger photo-gallery__trigger"

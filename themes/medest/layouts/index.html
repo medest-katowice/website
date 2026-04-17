@@ -10,7 +10,7 @@
     </div>
     {{ with .image }}
     <div class="image-container image-container--natural">
-        <img src="{{ (strings.TrimPrefix "/" .) | absURL }}" alt="{{ $.Params.philosophy.image_alt | default "Gabinet Medest" }}">
+        <img src="{{ (strings.TrimPrefix "/" .) | relURL }}" alt="{{ $.Params.philosophy.image_alt | default "Gabinet Medest" }}">
     </div>
     {{ end }}
 </section>
@@ -23,7 +23,7 @@
     <ul class="service-list">
         {{ range $i, $item := .items }}
         <li class="service-item">
-            <a href="{{ (strings.TrimPrefix "/" $item.url) | absURL }}">
+            <a href="{{ (strings.TrimPrefix "/" $item.url) | relURL }}">
                 <span class="service-number">{{ printf "%02d" (add $i 1) }}</span>
                 <div class="service-title-row">
                     <h2 class="service-title">{{ $item.title }}</h2>
@@ -39,7 +39,7 @@
         {{ end }}
     </ul>
     <div style="margin-top: 2rem;">
-        <a href="{{ "zabiegi/" | absURL }}" class="label cta-link">Wszystkie zabiegi</a>
+        <a href="{{ "zabiegi/" | relURL }}" class="label cta-link">Wszystkie zabiegi</a>
     </div>
 </section>
 {{ end }}
@@ -53,7 +53,7 @@
     <ul class="service-list">
         {{ range $i, $item := .items }}
         <li class="service-item">
-            <a href="{{ (strings.TrimPrefix "/" $item.url) | absURL }}">
+            <a href="{{ (strings.TrimPrefix "/" $item.url) | relURL }}">
                 <span class="service-number">{{ printf "%02d" (add $i 1) }}</span>
                 <div class="service-title-row">
                     <h2 class="service-title">{{ $item.title }}</h2>
@@ -69,7 +69,7 @@
         {{ end }}
     </ul>
     <div style="margin-top: 2rem;">
-        <a href="{{ "wskazania/" | absURL }}" class="label cta-link">Wszystkie wskazania</a>
+        <a href="{{ "wskazania/" | relURL }}" class="label cta-link">Wszystkie wskazania</a>
     </div>
 </section>
 {{ end }}
@@ -89,7 +89,7 @@
     <ul class="service-list">
         {{ range $i, $item := .items }}
         <li class="service-item">
-            <a href="{{ (strings.TrimPrefix "/" $item.url) | absURL }}">
+            <a href="{{ (strings.TrimPrefix "/" $item.url) | relURL }}">
                 <span class="service-number">{{ printf "%02d" (add $i 1) }}</span>
                 <div class="service-title-row">
                     <h2 class="service-title">{{ $item.title }}</h2>
@@ -105,7 +105,7 @@
         {{ end }}
     </ul>
     <div style="margin-top: 2rem;">
-        <a href="{{ "makijaz-permanentny/" | absURL }}" class="label cta-link">{{ .cta | default "Dowiedz się więcej" }}</a>
+        <a href="{{ "makijaz-permanentny/" | relURL }}" class="label cta-link">{{ .cta | default "Dowiedz się więcej" }}</a>
     </div>
 </section>
 {{ end }}
@@ -115,7 +115,7 @@
 <section class="section" id="zaufanie">
     {{ with .image }}
     <div class="image-container image-wide">
-        <img src="{{ (strings.TrimPrefix "/" .) | absURL }}" alt="Gabinet Medest Katowice">
+        <img src="{{ (strings.TrimPrefix "/" .) | relURL }}" alt="Gabinet Medest Katowice">
     </div>
     {{ end }}
     <div class="content-block">

@@ -16,8 +16,8 @@
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     {{ end }}
 
-    <link rel="icon" href="{{ "favicon.ico" | absURL }}" sizes="any">
-    <link rel="stylesheet" href="{{ "css/main.css" | absURL }}">
+    <link rel="icon" href="{{ "favicon.ico" | relURL }}" sizes="any">
+    <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
 
     {{ template "_internal/opengraph.html" . }}
     {{ template "_internal/schema.html" . }}
@@ -39,9 +39,9 @@
     {{ partial "contact-modal.html" . }}
     {{ partial "consent.html" . }}
 
-    <script src="{{ "js/separator.js" | absURL }}" defer></script>
-    <script src="{{ "js/navigation.js" | absURL }}" defer></script>
-    <script src="{{ "js/contact-modal.js" | absURL }}" defer></script>
-    <script src="{{ "js/gallery-lightbox.js" | absURL }}" defer></script>
+    <script src="{{ "js/separator.js" | relURL }}" defer></script>
+    <script src="{{ "js/navigation.js" | relURL }}" defer></script>
+    <script src="{{ "js/contact-modal.js" | relURL }}" defer></script>
+    <script src="{{ "js/gallery-lightbox.js" | relURL }}" defer></script>
 </body>
 </html>

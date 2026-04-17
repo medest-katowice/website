@@ -9,7 +9,7 @@
         {{ if eq $url "/kontakt/" }}
         <button type="button" class="label cta-link cta-link--button js-open-contact-modal">{{ .text | default "Umów konsultację" }}</button>
         {{ else }}
-        <a href="{{ (strings.TrimPrefix "/" $url) | absURL }}" class="label cta-link">{{ .text | default "Umów konsultację" }}</a>
+        <a href="{{ (strings.TrimPrefix "/" $url) | relURL }}" class="label cta-link">{{ .text | default "Umów konsultację" }}</a>
         {{ end }}
     </div>
     {{ end }}

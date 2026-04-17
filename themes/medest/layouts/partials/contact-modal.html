@@ -44,7 +44,7 @@
 
             <label class="contact-form__consent">
                 <input type="checkbox" name="Zgoda na kontakt" required>
-                <span>Zapoznałam/-em się z <a href="{{ "klauzula-informacyjna-rodo/" | absURL }}" target="_blank" rel="noopener noreferrer">klauzulą informacyjną RODO</a> i wyrażam zgodę na kontakt w celu odpowiedzi na wiadomość.</span>
+                <span>Zapoznałam/-em się z <a href="{{ "klauzula-informacyjna-rodo/" | relURL }}" target="_blank" rel="noopener noreferrer">klauzulą informacyjną RODO</a> i wyrażam zgodę na kontakt w celu odpowiedzi na wiadomość.</span>
             </label>
 
             {{ with $page.Site.Params.turnstile_site_key }}

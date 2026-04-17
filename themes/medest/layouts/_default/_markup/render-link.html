@@ -1,5 +1,5 @@
 {{- $href := .Destination -}}
 {{- if hasPrefix $href "/" -}}
-  {{- $href = (strings.TrimPrefix "/" $href) | absURL -}}
+  {{- $href = (strings.TrimPrefix "/" $href) | relURL -}}
 {{- end -}}
 <a href="{{ $href }}"{{ with .Title }} title="{{ . }}"{{ end }}>{{ .Text }}</a>

@@ -35,7 +35,7 @@ theme = "medest"
       unsafe = true
 
 disableKinds = ["taxonomy", "term"]
-canonifyURLs = true
+canonifyURLs = false
 
 [sitemap]
   changeFreq = "monthly"

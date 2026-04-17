@@ -1544,6 +1544,20 @@ body.contact-form-open .contact-modal {
         width: 100%;
     }
 
+    .branding-center > * {
+        position: relative;
+    }
+
+    .branding-center > *::before {
+        content: "";
+        background: rgba(0, 0, 0, 0.8);
+        filter: blur(15px);
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+    }
+
     .branding-center--page h1 {
         font-size: clamp(2rem, 8vw, 3.5rem);
     }
