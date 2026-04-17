@@ -12,6 +12,6 @@ cta:
 
 Stałe doskonalenie wiedzy i umiejętności jest ważną częścią pracy w gabinecie **medest**. Lek. med. Adrianna Laska regularnie uczestniczy w kursach, szkoleniach i kongresach, aby prowadzić zabiegi w oparciu o aktualną wiedzę medyczną oraz sprawdzone, bezpieczne techniki.
 
-Dla pacjentów to dodatkowa pewność, że trafiają do miejsca, w którym doświadczenie łączy się z odpowiedzialnością, a każda procedura wykonywana jest z dbałością o bezpieczeństwo i naturalny efekt.
+Dla pacjentów to dodatkowa pewność, że trafiają do miejsca, w którym doświadczenie łączy się z odpowiedzialnością, a każdy zabieg wykonywany jest z dbałością o bezpieczeństwo i naturalny efekt.
 
 {{< certificates-archive >}}

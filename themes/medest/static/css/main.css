@@ -305,6 +305,16 @@ body.nav-open .menu-toggle span:nth-child(3) { transform: rotate(-45deg); }
     aspect-ratio: 16/9;
 }
 
+.image-container--natural {
+    aspect-ratio: auto;
+    overflow: visible;
+}
+
+.image-container--natural img {
+    height: auto;
+    object-fit: contain;
+}
+
 /* ── Content blocks ── */
 
 .content-block {
@@ -451,7 +461,7 @@ body.nav-open .menu-toggle span:nth-child(3) { transform: rotate(-45deg); }
     margin: 0;
     margin-bottom: 1.5rem;
     overflow: hidden;
-    border-radius: 1.5rem;
+    border-radius: 99%;
 }
 
 .about-doctor__image img {
@@ -494,12 +504,12 @@ body.nav-open .menu-toggle span:nth-child(3) { transform: rotate(-45deg); }
 
 .certificate-highlight {
     margin: 2.5rem 0 4rem;
-    text-align: center;
 }
 
 .certificate-highlight__intro {
     max-width: 42rem;
-    margin: 0 auto 2rem;
+    margin: 0 0 2rem;
+    text-align: left;
 }
 
 .certificate-highlight__intro h2 {
@@ -574,6 +584,8 @@ body.nav-open .menu-toggle span:nth-child(3) { transform: rotate(-45deg); }
     width: min(100%, 30rem);
     height: auto;
     border-radius: 1.5rem;
+    background: transparent;
+    border: 0;
 }
 
 .certificate-card__thumb--highlight img {

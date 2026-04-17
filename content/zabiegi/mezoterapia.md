@@ -12,7 +12,7 @@ cta:
 
 ### Dla kogo
 
-Mezoterapia jest przeznaczona dla osób, które chcą poprawić jakość skóry — jej nawilżenie, jędrność, blask i elastyczność. Zabieg doskonale sprawdza się jako element profilaktyki anti-aging oraz jako uzupełnienie innych procedur estetycznych.
+Mezoterapia jest przeznaczona dla osób, które chcą poprawić jakość skóry — jej nawilżenie, jędrność, blask i elastyczność. Zabieg doskonale sprawdza się jako element profilaktyki anti-aging oraz jako uzupełnienie innych zabiegów estetycznych.
 
 ### Jak działa
 

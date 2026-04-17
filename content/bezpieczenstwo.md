@@ -37,7 +37,7 @@ Większość zabiegów jest dobrze tolerowana. Stosujemy znieczulenie miejscowe 
 
 **Jak długo trwa rekonwalescencja?**
 
-Zależy od zabiegu. Po toksynie botulinowej pacjent wraca do normalnej aktywności tego samego dnia. Po zabiegach z kwasem hialuronowym może wystąpić lekki obrzęk przez 1–3 dni. Szczegóły omawiamy przed każdą procedurą.
+Zależy od zabiegu. Po toksynie botulinowej pacjent wraca do normalnej aktywności tego samego dnia. Po zabiegach z kwasem hialuronowym może wystąpić lekki obrzęk przez 1–3 dni. Szczegóły omawiamy przed każdym zabiegiem.
 
 **Czy efekt jest natychmiastowy?**
 

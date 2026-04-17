@@ -3,16 +3,16 @@
 {{/* ── Philosophy / About ── */}}
 {{ with .Params.philosophy }}
 <section class="section" id="philosophy">
-    {{ with .image }}
-    <div class="image-container">
-        <img src="{{ (strings.TrimPrefix "/" .) | absURL }}" alt="{{ $.Params.philosophy.image_alt | default "Gabinet Medest" }}">
-    </div>
-    {{ end }}
     <div class="content-block">
         {{ range .paragraphs }}
         <p{{ if .italic }} class="text-italic"{{ end }}>{{ .text | safeHTML }}</p>
         {{ end }}
     </div>
+    {{ with .image }}
+    <div class="image-container image-container--natural">
+        <img src="{{ (strings.TrimPrefix "/" .) | absURL }}" alt="{{ $.Params.philosophy.image_alt | default "Gabinet Medest" }}">
+    </div>
+    {{ end }}
 </section>
 {{ end }}
 

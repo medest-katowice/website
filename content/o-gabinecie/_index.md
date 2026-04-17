@@ -35,7 +35,7 @@ Gabinet znajduje się w Katowicach, przy ul. Johna Baildona 24D/23, na 6. piętr
 
 1. **Konsultacja** — rozmowa o Twoich oczekiwaniach i ocena wskazań
 2. **Plan** — omówienie możliwości, metod i realistycznych efektów
-3. **Zabieg** — wykonanie procedury w komfortowych warunkach
+3. **Zabieg** — wykonanie zabiegu w komfortowych warunkach
 4. **Kontrola** — zalecenia pozabiegowe i możliwość kontaktu w razie pytań
 5. **Płatność** — wizytę można opłacić gotówką, kartą płatniczą lub bonem upominkowym
 
