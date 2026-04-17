@@ -28,7 +28,7 @@
   }
 
   function refreshSeparator() {
-    var fadeEnd = Math.max(window.innerHeight * 0.75, 1);
+    var fadeEnd = Math.max(window.innerHeight * 0.55, 1);
     var scrollY = getScrollY();
     var t = Math.min(scrollY / fadeEnd, 1);
     var progress = t * t;

@@ -365,7 +365,7 @@ body.nav-open .nav-vertical {
         animation-timing-function: linear;
         animation-fill-mode: both;
         animation-timeline: --page-scroll;
-        animation-range: 0 75vh;
+        animation-range: 0 55vh;
     }
 
     .separator {
@@ -612,7 +612,7 @@ body.nav-open .nav-vertical {
 .page-content p {
     font-size: 1.15rem;
     color: var(--text-muted);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.75rem;
     max-width: 520px;
 }
 
@@ -657,6 +657,9 @@ body.nav-open .nav-vertical {
 
 .about-doctor__content p {
     max-width: none;
+}
+
+.about-doctor__content p:last-child {
     margin-bottom: 0;
 }
 
@@ -1604,13 +1607,13 @@ body.contact-form-open .contact-modal {
             scroll-timeline: none;
         }
 
-        .separator {
+    .separator {
             animation-duration: 1ms;
             animation-timing-function: linear;
             animation-fill-mode: both;
             animation-name: separator-fade-out;
             animation-timeline: scroll(root block);
-            animation-range: 0 75vh;
+            animation-range: 0 55vh;
         }
     }
     .section {
@@ -1622,16 +1625,31 @@ body.contact-form-open .contact-modal {
         grid-template-columns: 1fr;
     }
 
-    .certificate-card__trigger,
-    .certificate-card__trigger--highlight {
+    .certificate-card__trigger {
         grid-template-columns: 4.5rem minmax(0, 1fr);
         gap: 1rem;
     }
 
-    .certificate-card__thumb,
-    .certificate-card__thumb--highlight {
+    .certificate-card__trigger--highlight {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.5rem;
+        width: 100%;
+        max-width: none;
+    }
+
+    .certificate-card__thumb {
         width: 4.5rem;
         height: 4.5rem;
+    }
+
+    .certificate-card__thumb--highlight {
+        width: 100%;
+        height: auto;
+        border-radius: 1rem;
+    }
+
+    .certificate-card__content--highlight {
+        max-width: none;
     }
 
     .gallery-lightbox__dialog {

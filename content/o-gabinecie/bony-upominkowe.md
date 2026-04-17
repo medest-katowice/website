@@ -6,7 +6,7 @@ seo_title: "Bony upominkowe Medest Katowice — prezent na zabieg | Medest"
 aliases:
   - "/o-gabinecie/bony-upominkowe-2/"
 label: "O gabinecie"
-subtitle: "Prezent na konsultację lub dowolny zabieg z oferty <strong>medest</strong>"
+subtitle: "Idealny prezent dla bliskiej Ci osoby."
 weight: 3
 cta:
   text: "Skontaktuj się w sprawie bonu"

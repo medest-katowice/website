@@ -6,7 +6,7 @@ subtitle: "Zasady ochrony małoletnich pacjentów"
 url: "/standardy-ochrony-maloletnich/"
 ---
 
-**Indywidualna Praktyka Lekarska Lek. med. Adrianna Laska, z siedzibą:**  
+**Indywidualna Praktyka Lekarska Lek.&nbsp;med.&nbsp;Adrianna&nbsp;Laska, z siedzibą:**  
 **ul. Johna Baildona, nr 24D, lok. 23, 40-115 Katowice**  
 **NIP: 6491183733, REGON: 240136245**  
 **MEDEST**

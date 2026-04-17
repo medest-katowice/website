@@ -33,12 +33,17 @@
   var image = lightbox.querySelector('.gallery-lightbox__image');
   var caption = lightbox.querySelector('.gallery-lightbox__caption');
   var counter = lightbox.querySelector('.gallery-lightbox__counter');
+  var dialog = lightbox.querySelector('.gallery-lightbox__dialog');
+  var swipeSurface = lightbox.querySelector('.gallery-lightbox__figure');
   var closeButtons = lightbox.querySelectorAll('[data-lightbox-close]');
   var prevButton = lightbox.querySelector('.gallery-lightbox__button--prev');
   var nextButton = lightbox.querySelector('.gallery-lightbox__button--next');
   var closeButton = lightbox.querySelector('.gallery-lightbox__button--close');
   var currentIndex = 0;
   var lastTrigger = null;
+  var touchStartX = 0;
+  var touchStartY = 0;
+  var hasTouchGesture = false;
 
   function renderItem(index) {
     currentIndex = (index + items.length) % items.length;
@@ -82,6 +87,20 @@
     button.addEventListener('click', closeLightbox);
   });
 
+  lightbox.addEventListener('click', function (event) {
+    if (lightbox.hidden) return;
+    if (event.target.closest('.gallery-lightbox__button')) return;
+    if (event.target === image) return;
+
+    closeLightbox();
+  });
+
+  dialog.addEventListener('click', function (event) {
+    if (event.target === dialog) {
+      closeLightbox();
+    }
+  });
+
   prevButton.addEventListener('click', function () {
     renderItem(currentIndex - 1);
   });
@@ -89,6 +108,38 @@
   nextButton.addEventListener('click', function () {
     renderItem(currentIndex + 1);
   });
+
+  swipeSurface.addEventListener('touchstart', function (event) {
+    if (event.touches.length !== 1) return;
+
+    touchStartX = event.touches[0].clientX;
+    touchStartY = event.touches[0].clientY;
+    hasTouchGesture = true;
+  }, { passive: true });
+
+  swipeSurface.addEventListener('touchend', function (event) {
+    if (!hasTouchGesture || event.changedTouches.length !== 1) return;
+
+    var deltaX = event.changedTouches[0].clientX - touchStartX;
+    var deltaY = event.changedTouches[0].clientY - touchStartY;
+
+    hasTouchGesture = false;
+
+    if (Math.abs(deltaX) < 48 || Math.abs(deltaX) <= Math.abs(deltaY)) {
+      return;
+    }
+
+    if (deltaX > 0) {
+      renderItem(currentIndex - 1);
+      return;
+    }
+
+    renderItem(currentIndex + 1);
+  }, { passive: true });
+
+  swipeSurface.addEventListener('touchcancel', function () {
+    hasTouchGesture = false;
+  }, { passive: true });
 
   window.addEventListener('keydown', function (event) {
     if (lightbox.hidden) return;
