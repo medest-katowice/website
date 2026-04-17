@@ -7,6 +7,7 @@
 
     {{ with .Description }}<meta name="description" content="{{ . }}">{{ end }}
     <link rel="canonical" href="{{ .Permalink }}">
+    <meta name="theme-color" content="#121212">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +17,12 @@
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     {{ end }}
 
-    <link rel="icon" href="{{ "favicon.ico" | relURL }}" sizes="any">
+    <link rel="icon" href="{{ "favicon.ico" | relURL }}" sizes="48x48">
+    <link rel="icon" type="image/svg+xml" href="{{ "favicon.svg" | relURL }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-32x32.png" | relURL }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon-16x16.png" | relURL }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ "apple-touch-icon.png" | relURL }}">
+    <link rel="manifest" href="{{ "site.webmanifest" | relURL }}">
     <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
 
     {{ template "_internal/opengraph.html" . }}
