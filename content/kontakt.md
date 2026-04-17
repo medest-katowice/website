@@ -7,9 +7,9 @@ layout: "single"
 url: "/kontakt/"
 ---
 
+<p class="contact-person">Adrianna Laska<br>Lekarz Medycyny Estetycznej</p>
+
 <dl class="contact-info">
-<dt>Lekarz</dt>
-<dd>Adrianna Laska<br>Lekarz Medycyny Estetycznej</dd>
 
 <dt>Telefon</dt>
 <dd><a href="tel:+48508237345">+48 508 237 345</a></dd>
@@ -24,9 +24,25 @@ url: "/kontakt/"
 <dd>50.273, 19.008</dd>
 </dl>
 
-### Dojazd
+Gabinet znajduje się na osiedlu Dębowe Tarasy, naprzeciw Silesia City Center.
 
-Gabinet znajduje się na osiedlu Dębowe Tarasy, naprzeciw Silesia City Center. [Mapa dojazdowa](https://maps.google.com/?q=50.273,19.008) ułatwi dotarcie na miejsce.
+<figure class="contact-map">
+  <iframe
+    title="Mapa dojazdu do gabinetu Medest"
+    src="https://www.google.com/maps?q=50.273,19.008&z=14&output=embed"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    allowfullscreen>
+  </iframe>
+</figure>
+
+<p class="contact-map-cta">
+  <a
+    href="https://www.google.com/maps/search/?api=1&amp;query=50.273,19.008"
+    class="label cta-link"
+    target="_blank"
+    rel="noopener noreferrer">Otwórz w Google Maps</a>
+</p>
 
 ### Umawianie wizyt
 

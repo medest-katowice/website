@@ -1,0 +1,69 @@
+{{ $measurementID := .Site.Params.analytics_measurement_id | default "" }}
+{{ $items := slice }}
+{{ if $measurementID }}
+  {{ range hugo.Data.consent.items }}
+    {{ $items = $items | append . }}
+  {{ end }}
+{{ end }}
+{{ if gt (len $items) 0 }}
+<div class="consent" data-consent-root hidden>
+    <div class="consent__panel" data-consent-banner>
+        <p class="consent__eyebrow label">Cookies</p>
+        <h2>Szanujemy Twoją prywatność</h2>
+        <p>Chcemy korzystać z analityki, aby lepiej rozumieć, jak używana jest strona. Skrypty analityczne uruchomimy dopiero po Twojej zgodzie.</p>
+        <div class="consent__actions">
+            <button type="button" class="consent__button consent__button--secondary" data-consent-action="deny">Odrzuć</button>
+            <button type="button" class="consent__button consent__button--ghost" data-consent-action="settings">Ustawienia</button>
+            <button type="button" class="consent__button consent__button--primary" data-consent-action="accept-all">Akceptuj</button>
+        </div>
+    </div>
+
+    <div class="consent__panel consent__panel--details" data-consent-settings hidden>
+        <p class="consent__eyebrow label">Ustawienia prywatności</p>
+        <h2>Wybierz, na co się zgadzasz</h2>
+        <p>Niezbędne elementy strony działają zawsze. Dodatkowo możesz włączyć analitykę pomagającą nam rozwijać serwis.</p>
+
+        <div class="consent__options">
+            {{ range $items }}
+            <label class="consent__option">
+                <input
+                    type="checkbox"
+                    class="consent__checkbox"
+                    data-consent-checkbox="{{ .key }}"
+                    {{ if .is_functional }}checked disabled{{ end }}>
+                <span class="consent__option-content">
+                    <span class="consent__option-title">{{ .title }}</span>
+                    <span class="consent__option-description">{{ .description }}</span>
+                </span>
+            </label>
+            {{ end }}
+        </div>
+
+        <div class="consent__actions">
+            <button type="button" class="consent__button consent__button--secondary" data-consent-action="deny">Odrzuć</button>
+            <button type="button" class="consent__button consent__button--ghost" data-consent-action="close-settings">Wróć</button>
+            <button type="button" class="consent__button consent__button--primary" data-consent-action="save">Zapisz wybór</button>
+        </div>
+    </div>
+</div>
+
+<script>
+window.medestConsentConfig = {
+    cookieName: "medest-consent",
+    expirationDays: 180,
+    scriptBase: {{ "js/" | absURL | jsonify }},
+    measurementId: {{ $measurementID | jsonify }},
+    items: [
+        {{- range $index, $item := $items -}}
+        {{- if $index }},{{ end -}}
+        {
+            key: {{ $item.key | jsonify }},
+            required: {{ if $item.is_functional }}true{{ else }}false{{ end }},
+            scriptFile: {{ $item.script_file | jsonify }}
+        }
+        {{- end -}}
+    ]
+};
+</script>
+<script src="{{ "js/consent.js" | absURL }}" defer></script>
+{{ end }}

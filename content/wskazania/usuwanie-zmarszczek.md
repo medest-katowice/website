@@ -1,8 +1,9 @@
 ---
 title: "Usuwanie zmarszczek"
 slug: "usuwanie-zmarszczek"
-description: "Usuwanie zmarszczek w Katowicach. Botoks, kwas hialuronowy, mezoterapia — skuteczne metody odmłodzenia. Gabinet Medest."
-subtitle: "Wygładzanie, spłycanie i profilaktyka zmarszczek"
+description: "Usuwanie zmarszczek w Katowicach — botoks, kwas hialuronowy, mezoterapia i pilingi. Naturalne odmłodzenie w Medest."
+seo_title: "Usuwanie zmarszczek Katowice — botoks, kwas, mezoterapia | Medest"
+subtitle: "Dobór metody do zmarszczek mimicznych i statycznych"
 label: "Problem"
 weight: 1
 cta:
@@ -22,6 +23,8 @@ W zależności od rodzaju i głębokości zmarszczek dobieramy indywidualnie jed
 - **Kwas hialuronowy** — wypełnianie głębszych bruzd i odbudowa objętości
 - **Mezoterapia** — poprawa nawilżenia, elastyczności i wygładzenie drobnych linii
 - **Pilingi lekarskie** — odmłodzenie i poprawa tekstury skóry
+
+Nie każda zmarszczka wymaga tego samego rozwiązania. Podczas konsultacji oceniamy, czy problem wynika głównie z mimiki, utraty objętości, jakości skóry czy połączenia kilku czynników.
 
 ### Czego można oczekiwać
 

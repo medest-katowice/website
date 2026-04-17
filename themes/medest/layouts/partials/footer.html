@@ -3,6 +3,9 @@
         {{ range .Site.Menus.footer }}
         <a href="{{ .URL }}" class="label">{{ .Name }}</a>
         {{ end }}
+        {{ with .Site.Params.analytics_measurement_id }}
+        <button type="button" class="label footer-consent-link manage-consent">Zarządzaj zgodą</button>
+        {{ end }}
     </div>
     <div class="footer-copy">© {{ now.Year }} {{ .Site.Params.brand | default "Medest" }} — {{ .Site.Params.footer_tagline | default "Gabinet Medycyny Estetycznej" }}</div>
 </footer>

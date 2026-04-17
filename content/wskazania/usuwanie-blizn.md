@@ -1,8 +1,9 @@
 ---
 title: "Usuwanie blizn"
 slug: "usuwanie-blizn"
-description: "Redukcja blizn i blizn potrądzikowych w Katowicach. Pilingi, mezoterapia, terapia bliznowa. Gabinet Medest."
-subtitle: "Spłycanie i poprawa wyglądu blizn"
+description: "Usuwanie blizn w Katowicach — blizny potrądzikowe, pourazowe i pooperacyjne. Plan terapii w Medest."
+seo_title: "Usuwanie blizn Katowice — blizny potrądzikowe i pourazowe | Medest"
+subtitle: "Terapia blizn potrądzikowych, pourazowych i pooperacyjnych"
 label: "Problem"
 weight: 8
 cta:
@@ -14,11 +15,15 @@ cta:
 
 Blizny — zarówno potrądzikowe, jak i pourazowe czy pooperacyjne — mogą być źródłem dyskomfortu estetycznego. Ich wygląd zależy od głębokości uszkodzenia, lokalizacji i indywidualnych predyspozycji do gojenia.
 
+Inaczej postępujemy z bliznami potrądzikowymi, inaczej z liniowymi bliznami po zabiegach lub urazach. Dlatego skuteczna terapia zawsze zaczyna się od oceny rodzaju blizny.
+
 ### Jak możemy pomóc
 
 - **Pilingi lekarskie** — stymulacja odnowy naskórka i spłycanie blizn powierzchniowych
 - **Mezoterapia** — stymulacja procesów regeneracyjnych w skórze
 - **Indywidualny plan terapii** — dobór metod w zależności od rodzaju i głębokości blizn
+
+Jeżeli blizny są następstwem wcześniejszego [trądziku](/wskazania/leczenie-tradziku/), plan leczenia uwzględnia również skłonność skóry do zmian zapalnych i przebarwień pozapalnych.
 
 ### Czego można oczekiwać
 

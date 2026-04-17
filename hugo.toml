@@ -9,6 +9,8 @@ theme = "medest"
   headline_italic = "Estetyczna"
   footer_tagline = "Gabinet medycyny estetycznej w Katowicach — Dębowe Tarasy"
   description = "Gabinet medycyny estetycznej w Katowicach, na osiedlu Dębowe Tarasy. Zabiegi anti-aging, modelowanie, mezoterapia i botoks. Gabinet prowadzony przez Adriannę Laskę."
+  # Google Analytics 4 Measurement ID, e.g. G-XXXXXXXXXX
+  analytics_measurement_id = "G-NC4L2YJM2W"
   phone = "+48 508 237 345"
   phone_href = "+48508237345"
   email = "kontakt@medest.pl"

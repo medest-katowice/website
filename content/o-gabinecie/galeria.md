@@ -1,9 +1,10 @@
 ---
 title: "Galeria"
 slug: "galeria"
-description: "Zdjęcia gabinetu medycyny estetycznej Medest w Katowicach. Wnętrze, wyposażenie, atmosfera."
+description: "Galeria gabinetu Medest w Katowicach — wnętrze, recepcja, gabinet zabiegowy i atmosfera miejsca."
+seo_title: "Galeria gabinetu medycyny estetycznej Katowice | Medest"
 label: "O gabinecie"
-subtitle: "Wnętrze gabinetu <strong>medest</strong>"
+subtitle: "Zobacz wnętrze gabinetu <strong>medest</strong>"
 weight: 2
 cta:
   text: "Wróć do strony o gabinecie"
@@ -13,6 +14,8 @@ cta:
 Zapraszamy do zapoznania się z wnętrzem naszego gabinetu. **medest** to kameralne miejsce na osiedlu Dębowe Tarasy w Katowicach, zaprojektowane z myślą o komforcie i prywatności pacjentów.
 
 Gabinet mieści się przy ul. Johna Baildona 24D/23, na 6. piętrze.
+
+Zdjęcia pokazują przestrzeń konsultacyjną, poczekalnię i gabinet zabiegowy — tak, aby jeszcze przed wizytą można było zobaczyć atmosferę miejsca i standard, w jakim pracujemy.
 
 <figure class="photo-gallery__hero">
   {{< gallery-image src="/images/gabinet-medest-katowice-panorama.jpg" alt="Panorama wnętrza gabinetu Medest w Katowicach" >}}

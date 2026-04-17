@@ -1,8 +1,9 @@
 ---
 title: "Cienie pod oczami"
 slug: "cienie-pod-oczami"
-description: "Leczenie cieni i zapadnięć pod oczami w Katowicach. Kwas hialuronowy, dolina łez. Gabinet Medest."
-subtitle: "Korekta cieni, doliny łez i zmęczonego wyglądu okolicy oczu"
+description: "Cienie pod oczami w Katowicach — korekta doliny łez, zapadnięć i zmęczonego wyglądu. Medest."
+seo_title: "Cienie pod oczami Katowice — dolina łez i korekta okolicy oczu | Medest"
+subtitle: "Korekta doliny łez, cieni i zmęczonego wyglądu"
 label: "Problem"
 weight: 4
 cta:
@@ -14,11 +15,15 @@ cta:
 
 Ciemne cienie pod oczami i tzw. dolina łez to jedne z najczęstszych skarg estetycznych. Twarz wygląda na zmęczoną, starszą, nawet gdy czujemy się dobrze. Przyczyną bywa utrata objętości tkanek pod oczami, cienka skóra odsłaniająca naczynia, a także czynniki genetyczne.
 
+Nie w każdym przypadku źródłem problemu jest to samo — czasem dominuje zapadnięcie tkanek, czasem prześwitujące naczynia, a czasem cienie wynikające z anatomii i gry światła. To właśnie od przyczyny zależy wybór metody.
+
 ### Jak możemy pomóc
 
 - **Kwas hialuronowy** — subtelne wypełnienie doliny łez i odbudowa objętości pod oczami
 - **Mezoterapia** — poprawa jakości i nawilżenia delikatnej skóry okolicy oczu
 - **Toksyna botulinowa** — w wybranych przypadkach, gdy problemem są także zmarszczki mimiczne okolicy oczu
+
+Podczas konsultacji oceniamy, czy większe znaczenie ma utrata objętości, jakość skóry czy jednoczesna obecność drobnych zmarszczek.
 
 ### Czego można oczekiwać
 

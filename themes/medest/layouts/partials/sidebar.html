@@ -1,7 +1,9 @@
-<aside class="fixed-left{{ if not .IsHome }} fixed-left--page{{ end }}">
+<aside class="fixed-left{{ if .IsHome }} fixed-left--home{{ else }} fixed-left--page{{ end }}">
+    {{ if not .IsHome }}
     <div></div>
+    {{ end }}
 
-    <div class="branding-center{{ if not .IsHome }} branding-center--page{{ end }}">
+    <div class="branding-center{{ if .IsHome }} branding-center--home{{ else }} branding-center--page{{ end }}">
         {{ if .IsHome }}
         <div class="brand-statement">{{ .Site.Params.brand | default "Medest" }}</div>
         <h1>
@@ -25,7 +27,7 @@
         </div>
     </div>
 
-    <nav class="nav-vertical" id="mobile-menu">
+    <nav class="nav-vertical{{ if .IsHome }} nav-vertical--home{{ end }}" id="mobile-menu">
         {{ range .Site.Menus.main }}
         <a href="{{ .URL }}" class="label{{ if $.IsMenuCurrent "main" . }} active{{ end }}">{{ .Name }}</a>
         {{ end }}

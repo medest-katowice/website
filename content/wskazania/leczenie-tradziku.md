@@ -1,8 +1,9 @@
 ---
 title: "Leczenie trądziku"
 slug: "leczenie-tradziku"
-description: "Leczenie trądziku i blizn potrądzikowych w Katowicach. Pilingi lekarskie, mezoterapia. Gabinet Medest."
-subtitle: "Kontrola trądziku i redukcja blizn potrądzikowych"
+description: "Leczenie trądziku w Katowicach — trądzik dorosłych, zmiany zapalne i blizny potrądzikowe. Pilingi i mezoterapia w Medest."
+seo_title: "Leczenie trądziku Katowice — trądzik dorosłych i blizny | Medest"
+subtitle: "Terapia trądziku aktywnego i blizn potrądzikowych"
 label: "Problem"
 weight: 3
 cta:
@@ -22,9 +23,13 @@ Leczenie trądziku w gabinecie lekarskim pozwala na zastosowanie metod o wyższe
 - **Mezoterapia** — dostarczanie substancji aktywnych regulujących wydzielanie sebum i przyspieszających regenerację
 - **Indywidualny plan leczenia** — łączenie zabiegów gabinetowych z pielęgnacją domową
 
+Jeśli po aktywnym trądziku pozostały nierówności i ślady, plan terapii może obejmować także rozwiązania stosowane przy [usuwaniu blizn](/wskazania/usuwanie-blizn/).
+
 ### Czego można oczekiwać
 
 Poprawa stanu skóry jest stopniowa. W wielu przypadkach widoczne rezultaty pojawiają się po 3–4 zabiegach. Blizny potrądzikowe wymagają dłuższej terapii, ale mogą być znacznie spłycone.
+
+Podczas konsultacji oceniamy, czy głównym problemem są aktywne stany zapalne, nadprodukcja sebum, przebarwienia pozapalne czy już utrwalone blizny — od tego zależy dobór metody.
 
 ### Rekomendowane zabiegi
 

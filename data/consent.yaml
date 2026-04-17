@@ -1,0 +1,6 @@
+items:
+  - key: analytics
+    title: "Analityka Google (GA4)"
+    description: "Pomaga nam zrozumieć, jak używana jest strona, które podstrony są odwiedzane i skąd trafiają użytkownicy. Skrypt ładuje się dopiero po wyrażeniu zgody."
+    is_functional: false
+    script_file: "analytics.js"

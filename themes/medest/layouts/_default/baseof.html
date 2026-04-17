@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} — {{ .Site.Title }}{{ end }}</title>
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Params.seo_title | default (printf "%s — %s" .Title .Site.Title) }}{{ end }}</title>
 
     {{ with .Description }}<meta name="description" content="{{ . }}">{{ end }}
     <link rel="canonical" href="{{ .Permalink }}">
@@ -30,6 +30,8 @@
             {{ partial "footer.html" . }}
         </main>
     </div>
+
+    {{ partial "consent.html" . }}
 
     <script src="{{ "js/separator.js" | absURL }}" defer></script>
     <script src="{{ "js/navigation.js" | absURL }}" defer></script>
