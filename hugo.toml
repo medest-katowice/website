@@ -12,6 +12,7 @@ theme = "medest"
   # Google Analytics 4 Measurement ID, e.g. G-XXXXXXXXXX
   analytics_measurement_id = "G-NC4L2YJM2W"
   contact_form_action = "https://submit-form.com/FrhSOP6GQ"
+  turnstile_site_key = "0x4AAAAAAC_BRuLpgWZajFcG"
   phone = "+48 508 237 345"
   phone_href = "+48508237345"
   email = "kontakt@medest.pl"

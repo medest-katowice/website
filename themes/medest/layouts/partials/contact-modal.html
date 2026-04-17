@@ -47,6 +47,12 @@
                 <span>Zapoznałam/-em się z <a href="{{ "klauzula-informacyjna-rodo/" | absURL }}" target="_blank" rel="noopener noreferrer">klauzulą informacyjną RODO</a> i wyrażam zgodę na kontakt w celu odpowiedzi na wiadomość.</span>
             </label>
 
+            {{ with $page.Site.Params.turnstile_site_key }}
+            <div class="contact-form__turnstile">
+                <div data-turnstile-container data-sitekey="{{ . }}"></div>
+            </div>
+            {{ end }}
+
             <p class="contact-form__status" data-contact-form-status aria-live="polite"></p>
 
             <button type="submit" class="contact-form__submit" data-contact-form-submit>Wyślij wiadomość</button>

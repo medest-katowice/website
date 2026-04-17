@@ -1165,6 +1165,15 @@ body.contact-form-open .contact-modal {
     text-underline-offset: 0.18em;
 }
 
+.contact-form__turnstile {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.contact-form__turnstile > div {
+    min-height: 65px;
+}
+
 .contact-form__status {
     min-height: 1.5rem;
     margin: 0;
