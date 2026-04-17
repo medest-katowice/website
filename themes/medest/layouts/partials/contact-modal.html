@@ -1,3 +1,4 @@
+{{ $page := . }}
 {{ with .Site.Params.contact_form_action }}
 <div class="contact-modal" id="contact-modal" aria-hidden="true">
     <div class="contact-modal__backdrop" data-close-contact-modal></div>
@@ -19,12 +20,12 @@
             <div class="contact-form__grid">
                 <label class="contact-form__field">
                     <span>Imię i nazwisko</span>
-                    <input type="text" name="Imię i nazwisko" autocomplete="name" data-contact-first-input data-error-required="Podaj imię i nazwisko." required>
+                    <input type="text" name="Imię i nazwisko" autocomplete="name" data-contact-first-input required>
                 </label>
 
                 <label class="contact-form__field">
                     <span>Adres e-mail</span>
-                    <input type="email" name="Adres e-mail" autocomplete="email" data-error-required="Podaj adres e-mail." data-error-invalid="Wpisz prawidłowy adres e-mail." required>
+                    <input type="email" name="Adres e-mail" autocomplete="email" required>
                 </label>
             </div>
 
@@ -35,13 +36,14 @@
 
             <label class="contact-form__field">
                 <span>Wiadomość</span>
-                <textarea name="Wiadomość" rows="6" data-error-required="Napisz wiadomość." required></textarea>
+                <textarea name="Wiadomość" rows="6" required></textarea>
             </label>
 
+            <input type="hidden" name="Strona" value="{{ if $page.IsHome }}Strona główna{{ else }}{{ $page.Title }}{{ end }}">
             <input class="contact-form__honeypot" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
 
             <label class="contact-form__consent">
-                <input type="checkbox" name="Zgoda na kontakt" data-error-required="Zaznacz zgodę na kontakt, aby wysłać wiadomość." required>
+                <input type="checkbox" name="Zgoda na kontakt" required>
                 <span>Zapoznałam/-em się z <a href="{{ "klauzula-informacyjna-rodo/" | absURL }}" target="_blank" rel="noopener noreferrer">klauzulą informacyjną RODO</a> i wyrażam zgodę na kontakt w celu odpowiedzi na wiadomość.</span>
             </label>
 

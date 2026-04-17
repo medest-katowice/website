@@ -32,20 +32,6 @@
     status.dataset.state = '';
   }
 
-  function getValidationMessage(field) {
-    if (!field || !field.validity) return '';
-
-    if (field.validity.valueMissing) {
-      return field.dataset.errorRequired || 'To pole jest wymagane.';
-    }
-
-    if (field.validity.typeMismatch) {
-      return field.dataset.errorInvalid || 'Podaj prawidłową wartość.';
-    }
-
-    return '';
-  }
-
   function setDefaultView() {
     modal.classList.remove('contact-modal--success');
 
@@ -130,20 +116,6 @@
       if (nextField) {
         nextField.focus();
       }
-    });
-  });
-
-  inputs.forEach(function (field) {
-    field.addEventListener('invalid', function () {
-      field.setCustomValidity(getValidationMessage(field));
-    });
-
-    field.addEventListener('input', function () {
-      field.setCustomValidity('');
-    });
-
-    field.addEventListener('change', function () {
-      field.setCustomValidity('');
     });
   });
 
