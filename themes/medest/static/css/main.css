@@ -1,11 +1,8 @@
-@view-transition {
-    navigation: auto;
-}
-
 :root {
     --bg-color: #121212;
     --text-primary: #EDEDED;
     --text-muted: #a6a6a6;
+    --pane-divider-opacity: 0;
     --font-serif: 'Cormorant Garamond', serif;
     --font-sans: 'Manrope', sans-serif;
 
@@ -13,9 +10,7 @@
     --space-sm: 1.5rem;
     --space-md: 4rem;
     --space-lg: 8rem;
-
     --dot-size: 4px;
-    view-transition-name: none;
 }
 
 * {
@@ -32,21 +27,6 @@ body {
     overflow: hidden;
     line-height: 1.5;
     timeline-scope: --page-scroll;
-}
-
-::view-transition-group(root) {
-    animation-duration: 0.42s;
-    animation-timing-function: ease;
-}
-
-.page-container {
-    view-transition-name: root;
-}
-
-.header-anchor,
-.contact-modal,
-.gallery-lightbox {
-    view-transition-name: none;
 }
 
 @keyframes separator-fade-out {
@@ -253,7 +233,7 @@ body.nav-open .menu-toggle span:nth-child(3) { transform: rotate(-45deg); }
     width: 1px;
     height: 100%;
     background: rgba(255, 255, 255, 0.14);
-    opacity: 0;
+    opacity: var(--pane-divider-opacity);
     pointer-events: none;
 }
 
@@ -374,7 +354,7 @@ body.nav-open .nav-vertical {
     overscroll-behavior-y: contain;
 }
 
-@supports ((animation-timeline: --page-scroll) and (timeline-scope: --page-scroll)) {
+@supports (animation-timeline: scroll()) and (timeline-scope: --page-scroll) {
     .scroll-right {
         scroll-timeline: --page-scroll block;
     }
@@ -395,6 +375,11 @@ body.nav-open .nav-vertical {
     .fixed-left::after {
         animation-name: divider-fade-in;
     }
+}
+
+.separator-js-fallback .separator,
+.separator-js-fallback .fixed-left::after {
+    animation: none;
 }
 
 .dot {
@@ -1614,13 +1599,18 @@ body.contact-form-open .contact-modal {
         scrollbar-gutter: auto;
     }
 
-    @supports ((animation-timeline: --page-scroll) and (timeline-scope: --page-scroll)) {
-        body {
-            scroll-timeline: --page-scroll block;
-        }
-
+    @supports (animation-timeline: scroll()) {
         .scroll-right {
             scroll-timeline: none;
+        }
+
+        .separator {
+            animation-duration: 1ms;
+            animation-timing-function: linear;
+            animation-fill-mode: both;
+            animation-name: separator-fade-out;
+            animation-timeline: scroll(root block);
+            animation-range: 0 75vh;
         }
     }
     .section {
@@ -1700,12 +1690,6 @@ body.contact-form-open .contact-modal {
         grid-template-columns: 1fr;
     }
 
-}
-
-@media (prefers-reduced-motion: reduce) {
-    ::view-transition-group(root) {
-        animation-duration: 0.01ms;
-    }
 }
 
 @media (max-width: 640px) {
