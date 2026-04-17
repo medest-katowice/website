@@ -42,33 +42,30 @@ h6 {
     font-weight: 500;
 }
 
-/* Experimental heading balance: remove .experimental-heading-balance from <body> to revert. */
-body.experimental-heading-balance .branding-center {
+.branding-center {
     width: 70%;
 }
 
-body.experimental-heading-balance .hero-subtitle,
-body.experimental-heading-balance .service-title,
-body.experimental-heading-balance .content-block h2,
-body.experimental-heading-balance .page-content h2,
-body.experimental-heading-balance .page-content h2.page-subheading,
-body.experimental-heading-balance .page-content h3,
-body.experimental-heading-balance .certificate-highlight__intro h2,
-body.experimental-heading-balance .branding-center h1 {
+.service-title,
+.content-block h2,
+.page-content h2,
+.page-content h2.page-subheading,
+.page-content h3,
+.certificate-highlight__intro h2,
+.branding-center h1 {
     text-wrap: balance;
     text-wrap-style: balance;
     line-height: 1;
 }
 
 @media (min-width: 1025px) {
-    body.experimental-heading-balance .hero-subtitle,
-    body.experimental-heading-balance .service-title,
-    body.experimental-heading-balance .content-block h2,
-    body.experimental-heading-balance .page-content h2,
-    body.experimental-heading-balance .page-content h2.page-subheading,
-    body.experimental-heading-balance .page-content h3,
-    body.experimental-heading-balance .certificate-highlight__intro h2,
-    body.experimental-heading-balance .branding-center h1 {
+    .service-title,
+    .content-block h2,
+    .page-content h2,
+    .page-content h2.page-subheading,
+    .page-content h3,
+    .certificate-highlight__intro h2,
+    .branding-center h1 {
         width: 70%;
     }
 }
@@ -1206,16 +1203,6 @@ body.contact-form-open .contact-modal {
     width: min(100%, 320px);
 }
 
-.contact-form__turnstile > div {
-    width: 100%;
-    min-height: 65px;
-}
-
-.contact-form__turnstile iframe {
-    display: block;
-    filter: grayscale(0.18) saturate(0.82) brightness(1.04);
-}
-
 .contact-form__status {
     min-height: 1.5rem;
     margin: 0;
@@ -1500,14 +1487,13 @@ body.contact-form-open .contact-modal {
         max-width: none;
     }
 
-    body.experimental-heading-balance .hero-subtitle,
-    body.experimental-heading-balance .service-title,
-    body.experimental-heading-balance .content-block h2,
-    body.experimental-heading-balance .page-content h2,
-    body.experimental-heading-balance .page-content h2.page-subheading,
-    body.experimental-heading-balance .page-content h3,
-    body.experimental-heading-balance .certificate-highlight__intro h2,
-    body.experimental-heading-balance .branding-center h1 {
+    .service-title,
+    .content-block h2,
+    .page-content h2,
+    .page-content h2.page-subheading,
+    .page-content h3,
+    .certificate-highlight__intro h2,
+    .branding-center h1 {
         width: auto;
     }
 
