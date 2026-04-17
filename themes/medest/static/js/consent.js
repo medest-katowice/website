@@ -80,7 +80,7 @@
             return;
         }
 
-        const existing = document.querySelector(`script[data-consent-script-loaded="${item.key}"]`);
+        const existing = Array.from(document.querySelectorAll("script[data-consent-script-loaded]")).find((script) => script.dataset.consentScriptLoaded === item.key);
         if (existing) {
             loadedKeys.add(item.key);
             return;
