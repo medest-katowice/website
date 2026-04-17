@@ -447,14 +447,17 @@ body.nav-open .menu-toggle span:nth-child(3) { transform: rotate(-45deg); }
 }
 
 .about-doctor__image {
-    max-width: 360px;
+    max-width: 420px;
     margin: 0;
     margin-bottom: 1.5rem;
+    overflow: hidden;
+    border-radius: 1.5rem;
 }
 
 .about-doctor__image img {
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
+    object-position: center top;
 }
 
 .about-doctor__content p {
@@ -490,7 +493,21 @@ body.nav-open .menu-toggle span:nth-child(3) { transform: rotate(-45deg); }
 }
 
 .certificate-highlight {
-    margin: 2rem 0 3rem;
+    margin: 2.5rem 0 4rem;
+    text-align: center;
+}
+
+.certificate-highlight__intro {
+    max-width: 42rem;
+    margin: 0 auto 2rem;
+}
+
+.certificate-highlight__intro h2 {
+    margin-bottom: 0.75rem;
+}
+
+.certificate-highlight__intro p {
+    max-width: none;
 }
 
 .certificate-group {
@@ -536,7 +553,11 @@ body.nav-open .menu-toggle span:nth-child(3) { transform: rotate(-45deg); }
 }
 
 .certificate-card__trigger--highlight {
-    grid-template-columns: 7.5rem minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    gap: 1.5rem;
+    max-width: 38rem;
+    margin: 0 auto;
     padding: 0;
 }
 
@@ -550,8 +571,19 @@ body.nav-open .menu-toggle span:nth-child(3) { transform: rotate(-45deg); }
 }
 
 .certificate-card__thumb--highlight {
-    width: 7.5rem;
-    height: 7.5rem;
+    width: min(100%, 30rem);
+    height: auto;
+    border-radius: 1.5rem;
+}
+
+.certificate-card__thumb--highlight img {
+    height: auto;
+    object-fit: contain;
+}
+
+.certificate-card__content--highlight {
+    max-width: 32rem;
+    text-align: center;
 }
 
 .certificate-card__thumb img {

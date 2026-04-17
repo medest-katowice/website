@@ -5,8 +5,8 @@ hero_subtitle: "Naturalne piękno podkreślone z&nbsp;precyzją i&nbsp;troską o
 
 philosophy:
   label: "Filozofia"
-  image: "/images/gabinet-medest-katowice-sofa-logo.jpg"
-  image_alt: "Gabinet Medest w Katowicach"
+  image: "/images/gabinet-medest-katowice-recepcja.jpg"
+  image_alt: "Recepcja gabinetu Medest w Katowicach"
   heading: "Dyskretna<br><span class=\"text-italic\">Metamorfoza</span>"
   paragraphs:
     - text: "Nazywam się <strong>Adrianna Laska</strong> i jestem dyplomowanym lekarzem medycyny estetycznej. Od 2005 roku prowadzę własny gabinet w Katowicach — na osiedlu <strong>Dębowe Tarasy</strong>, naprzeciw Silesia City Center."

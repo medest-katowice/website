@@ -32,6 +32,10 @@ Gabinet znajduje się na osiedlu Dębowe Tarasy, naprzeciw Silesia City Center. 
 
 Gabinet przyjmuje pacjentów po wcześniejszym umówieniu wizyty. Najszybszą formą kontaktu jest kontakt telefoniczny.
 
+### Formy płatności
+
+Wizytę można opłacić gotówką, kartą płatniczą lub bonem upominkowym. Więcej informacji znajdziesz na stronie [Bony upominkowe](/o-gabinecie/bony-upominkowe/).
+
 ### Pierwsza wizyta
 
 Nie musisz wiedzieć, jakiego zabiegu potrzebujesz. Podczas pierwszej konsultacji porozmawiamy o Twoich oczekiwaniach, ocenimy stan skóry i wspólnie ustalimy dalsze kroki. Konsultacja jest bezpiecznym miejscem na pytania i wątpliwości.

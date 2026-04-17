@@ -6,6 +6,7 @@ aliases:
   - "/o-gabinecie/bony-upominkowe-2/"
 label: "O gabinecie"
 subtitle: "Prezent na dowolny zabieg z oferty <strong>medest</strong>"
+weight: 3
 cta:
   text: "Skontaktuj się w sprawie bonu"
   url: "/kontakt/"

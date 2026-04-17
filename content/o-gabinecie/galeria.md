@@ -4,6 +4,7 @@ slug: "galeria"
 description: "Zdjęcia gabinetu medycyny estetycznej Medest w Katowicach. Wnętrze, wyposażenie, atmosfera."
 label: "O gabinecie"
 subtitle: "Wnętrze gabinetu <strong>medest</strong>"
+weight: 2
 cta:
   text: "Wróć do strony o gabinecie"
   url: "/o-gabinecie/"
