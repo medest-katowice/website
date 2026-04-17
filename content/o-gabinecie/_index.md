@@ -3,7 +3,7 @@ title: "O gabinecie"
 description: "Medest Katowice — gabinet medycyny estetycznej prowadzony przez lek. med. Adriannę Laskę. Kwalifikacje, bezpieczeństwo i lokalizacja."
 seo_title: "O gabinecie Medest Katowice — Adrianna Laska, kwalifikacje, lokalizacja | Medest"
 label: "O nas"
-subtitle: "Gabinet medycyny estetycznej prowadzony przez lekarza w Katowicach."
+subtitle: "Medest to gabinet medycyny estetycznej w Katowicach prowadzony przez lek. med. Adriannę Laskę."
 aliases:
   - "/cennik/"
   - "/o-gabinecie/wirtualny-spacer/"
