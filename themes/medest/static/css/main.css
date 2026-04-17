@@ -1203,12 +1203,7 @@ body.contact-form-open .contact-modal {
 }
 
 .contact-form__turnstile {
-    display: flex;
-    justify-content: flex-start;
     width: min(100%, 320px);
-    padding: 1px;
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    background: rgba(255, 255, 255, 0.02);
 }
 
 .contact-form__turnstile > div {
