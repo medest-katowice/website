@@ -25,6 +25,15 @@
             <span class="dot"></span>
             <span class="dot"></span>
         </div>
+
+        {{ with .Params.cta }}
+        {{ $url := .url | default "/kontakt/" }}
+        {{ if eq $url "/kontakt/" }}
+        <button type="button" class="fixed-left__cta js-open-contact-modal">{{ .text | default "Umów konsultację" }}</button>
+        {{ else }}
+        <a href="{{ (strings.TrimPrefix "/" $url) | relURL }}" class="fixed-left__cta">{{ .text | default "Umów konsultację" }}</a>
+        {{ end }}
+        {{ end }}
     </div>
 
     <nav class="nav-vertical" id="mobile-menu">

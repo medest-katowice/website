@@ -74,42 +74,6 @@
 </section>
 {{ end }}
 
-{{/* ── Permanent makeup ── */}}
-{{ with .Params.permanent_makeup }}
-<section class="section" id="makijaz-permanentny">
-    <div class="content-block">
-        <span class="label">{{ .label | default "Makijaż permanentny" }}</span>
-        {{ with .heading }}
-        <h2>{{ . | safeHTML }}</h2>
-        {{ end }}
-        {{ range .paragraphs }}
-        <p>{{ .text | safeHTML }}</p>
-        {{ end }}
-    </div>
-    <ul class="service-list">
-        {{ range $i, $item := .items }}
-        <li class="service-item">
-            <a href="{{ (strings.TrimPrefix "/" $item.url) | relURL }}">
-                <span class="service-number">{{ printf "%02d" (add $i 1) }}</span>
-                <div class="service-title-row">
-                    <h2 class="service-title">{{ $item.title }}</h2>
-                    {{ with $item.badge }}
-                    <span class="service-badge">{{ . }}</span>
-                    {{ end }}
-                </div>
-                {{ with $item.description }}
-                <p class="service-description">{{ . }}</p>
-                {{ end }}
-            </a>
-        </li>
-        {{ end }}
-    </ul>
-    <div style="margin-top: 2rem;">
-        <a href="{{ "makijaz-permanentny/" | relURL }}" class="label cta-link">{{ .cta | default "Dowiedz się więcej" }}</a>
-    </div>
-</section>
-{{ end }}
-
 {{/* ── Why trust us ── */}}
 {{ with .Params.trust }}
 <section class="section" id="zaufanie">

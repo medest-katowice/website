@@ -2,17 +2,6 @@
 
 <div class="page-content page-content--top">
     {{ .Content }}
-
-    {{ with .Params.cta }}
-    <div style="margin-top: 3rem;">
-        {{ $url := .url | default "/kontakt/" }}
-        {{ if eq $url "/kontakt/" }}
-        <button type="button" class="label cta-link cta-link--button js-open-contact-modal">{{ .text | default "Umów konsultację" }}</button>
-        {{ else }}
-        <a href="{{ (strings.TrimPrefix "/" $url) | relURL }}" class="label cta-link">{{ .text | default "Umów konsultację" }}</a>
-        {{ end }}
-    </div>
-    {{ end }}
 </div>
 
 {{ end }}

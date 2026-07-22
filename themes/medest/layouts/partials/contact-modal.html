@@ -34,6 +34,22 @@
                 <input type="tel" name="Telefon" autocomplete="tel">
             </label>
 
+            {{ $zabiegi := slice }}
+            {{ with $page.Site.GetPage "section" "zabiegi" }}{{ $zabiegi = .Pages }}{{ end }}
+            {{ $selectedTopic := "" }}
+            {{ range $zabiegi }}{{ if eq $page.Title .Title }}{{ $selectedTopic = .Title }}{{ end }}{{ end }}
+
+            <label class="contact-form__field">
+                <span>Temat</span>
+                <select name="Temat" class="contact-form__select" required>
+                    <option value="" disabled {{ if eq $selectedTopic "" }}selected{{ end }}>Wybierz temat</option>
+                    {{ range $zabiegi }}
+                    <option value="{{ .Title }}" {{ if eq $selectedTopic .Title }}selected{{ end }}>{{ .Title }}</option>
+                    {{ end }}
+                    <option value="Inny">Inny</option>
+                </select>
+            </label>
+
             <label class="contact-form__field">
                 <span>Wiadomość</span>
                 <textarea name="Wiadomość" rows="6" required></textarea>

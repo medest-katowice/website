@@ -12,7 +12,7 @@
             <span></span>
             <span></span>
         </button>
-        <a href="{{ .Site.Home.Permalink }}" class="header-brand-name" aria-label="Medest">
+        <a href="{{ "/" | relURL }}" class="header-brand-name" aria-label="Medest">
             {{ partial "logo-medest.html" (dict "class" "brand-logo brand-logo--header" "ariaLabel" "Medest") }}
         </a>
     </div>
