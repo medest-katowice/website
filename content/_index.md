@@ -25,6 +25,10 @@ treatments:
     - title: "Mezoterapia"
       description: "Rewitalizacja i odżywienie skóry od wewnątrz"
       url: "/zabiegi/mezoterapia/"
+    - title: "Medyczny makijaż permanentny"
+      badge: "Nowość"
+      description: "Pigmentacja rekonstrukcyjna po mastektomii i kamuflaż blizn, wykonywane przez specjalistkę współpracującą z Medest"
+      url: "/zabiegi/makijaz-permanentny/"
 
 problems:
   label: "Z czym pomagamy"
@@ -41,19 +45,6 @@ problems:
     - title: "Trądzik i blizny potrądzikowe"
       description: "Terapie wspierające wygładzenie skóry i poprawę jej struktury"
       url: "/wskazania/leczenie-tradziku/"
-
-permanent_makeup:
-  label: "Nowa oferta"
-  heading: "Makijaż<br>permanentny"
-  paragraphs:
-    - text: "W Medest dostępny jest także <strong>makijaż permanentny</strong> wykonywany przez współpracującą z nami specjalistkę, która koncentruje się wyłącznie na tej dziedzinie."
-    - text: "To propozycja dla osób, które chcą podkreślić urodę w sposób trwały, precyzyjny i dopasowany do codziennego stylu."
-  items:
-    - title: "Makijaż permanentny"
-      badge: "Nowość"
-      description: "Indywidualnie projektowany efekt wykonywany przez doświadczoną linergistkę współpracującą z Medest"
-      url: "/makijaz-permanentny/"
-  cta: "Poznaj ofertę"
 
 trust:
   label: "Dlaczego Medest"
