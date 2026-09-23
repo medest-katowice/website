@@ -15,10 +15,15 @@
 3. Część stron pomocniczych pod `/o-gabinecie/` i `/nowosci/` jest dziś faktycznie pusta lub sprowadza się do formularza kontaktowego.
 4. Poza stronami treściowymi istnieje zestaw technicznych URL-i sitemap WordPressa, które po migracji nie powinny zwracać 404.
 
-## Rekomendowany model wdrożenia
+## Aktualny model wdrożenia
 
 - Generator statyczny: `Hugo`
-- Hosting: rozwiązanie z natywnymi redirectami 301, np. Netlify, Cloudflare Pages, Vercel albo własny serwer
+- Hosting produkcyjny: **Cloudflare Pages**, projekt `medest`
+- Źródło wdrożenia: repozytorium GitHub `medest-katowice/website`, branch `main`
+- Build: `hugo --gc --minify`, wynik w katalogu `public`
+- Domena: `medest.pl` i `www.medest.pl`, DNS obsługuje Cloudflare
+- Redirecty: plik [`static/_redirects`](../static/_redirects), obsługiwany przez Cloudflare Pages
+- Szczegółowa procedura publikacji: [`docs/deployment.md`](deployment.md)
 - Reguła migracyjna: **realne 301 na poziomie hostingu**, nie tylko alias pages
 
 ## Nowe URL-e, które warto dodać

@@ -3,6 +3,9 @@ languageCode = "pl"
 title = "Medest — Gabinet Medycyny Estetycznej Katowice"
 theme = "medest"
 
+disableKinds = ["taxonomy", "term"]
+canonifyURLs = false
+
 [params]
   brand = "Medest"
   headline = "Medycyna"
@@ -33,9 +36,6 @@ theme = "medest"
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
-
-disableKinds = ["taxonomy", "term"]
-canonifyURLs = false
 
 [sitemap]
   changeFreq = "monthly"

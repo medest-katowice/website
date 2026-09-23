@@ -5,6 +5,8 @@
 /o-gabinecie/bony-upominkowe-2/     /o-gabinecie/bony-upominkowe/   301
 /o-gabinecie/wirtualny-spacer/      /o-gabinecie/   301
 /makijaz-permanentny/               /zabiegi/makijaz-permanentny/   301
+/zabiegi/botox-toksyna-botulinowa/   /zabiegi/toksyna-botulinowa/   301
+/zabieg/botoks-katowice/             /zabiegi/toksyna-botulinowa/   301
 
 # Legacy WordPress sitemap URLs
 /sitemap.html                       /sitemap.xml    301
