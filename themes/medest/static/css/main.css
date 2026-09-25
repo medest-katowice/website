@@ -343,6 +343,16 @@ body.nav-open .nav-vertical {
     overscroll-behavior-y: contain;
 }
 
+@media (min-width: 1025px) {
+    .scroll-right--home .section {
+        max-width: 920px;
+    }
+
+    .scroll-right--home .service-list {
+        max-width: 520px;
+    }
+}
+
 .dot {
     width: var(--dot-size);
     height: var(--dot-size);
