@@ -2,7 +2,7 @@
 title: "Leczenie trądziku"
 slug: "leczenie-tradziku"
 description: "Leczenie trądziku w Katowicach — trądzik dorosłych, zmiany zapalne i blizny potrądzikowe. Pilingi i mezoterapia w Medest."
-seo_title: "Leczenie trądziku Katowice — trądzik dorosłych i blizny | Medest"
+seo_title: "Leczenie trądziku Katowice | Medest"
 subtitle: "Terapia trądziku aktywnego i blizn potrądzikowych"
 label: "Problem"
 weight: 3

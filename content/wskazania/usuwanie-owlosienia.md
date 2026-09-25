@@ -2,7 +2,7 @@
 title: "Usuwanie owłosienia"
 slug: "usuwanie-owlosienia"
 description: "Nadmierne owłosienie w Katowicach — diagnostyka przyczyn i plan terapii hirsutyzmu. Gabinet Medest."
-seo_title: "Nadmierne owłosienie Katowice — diagnostyka i plan terapii | Medest"
+seo_title: "Nadmierne owłosienie Katowice | Medest"
 subtitle: "Diagnostyka przyczyn hirsutyzmu i plan postępowania"
 label: "Problem"
 weight: 7

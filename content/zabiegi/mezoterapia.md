@@ -2,7 +2,7 @@
 title: "Mezoterapia"
 slug: "mezoterapia"
 description: "Mezoterapia igłowa w Katowicach — nawilżenie, rewitalizacja, poprawa jędrności skóry oraz mezoterapia skóry głowy. Medest."
-seo_title: "Mezoterapia igłowa Katowice — rewitalizacja skóry i skóry głowy | Medest"
+seo_title: "Mezoterapia igłowa Katowice | Medest"
 subtitle: "Nawilżenie, rewitalizacja i stymulacja skóry od wewnątrz"
 label: "Zabieg"
 weight: 4

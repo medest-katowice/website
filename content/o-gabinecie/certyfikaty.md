@@ -2,7 +2,7 @@
 title: "Certyfikaty"
 slug: "certyfikaty"
 description: "Certyfikaty, szkolenia i kongresy z medycyny estetycznej — Adrianna Laska, Medest Katowice."
-seo_title: "Certyfikaty medycyny estetycznej Katowice — Adrianna Laska | Medest"
+seo_title: "Certyfikaty — Adrianna Laska | Medest"
 label: "O gabinecie"
 subtitle: "Szkolenia, kongresy i rozwój zawodowy"
 weight: 1

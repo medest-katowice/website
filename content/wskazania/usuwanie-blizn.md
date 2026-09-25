@@ -2,7 +2,7 @@
 title: "Usuwanie blizn"
 slug: "usuwanie-blizn"
 description: "Usuwanie blizn w Katowicach — blizny potrądzikowe, pourazowe i pooperacyjne. Plan terapii w Medest."
-seo_title: "Usuwanie blizn Katowice — blizny potrądzikowe i pourazowe | Medest"
+seo_title: "Usuwanie blizn Katowice | Medest"
 subtitle: "Terapia blizn potrądzikowych, pourazowych i pooperacyjnych"
 label: "Problem"
 weight: 8

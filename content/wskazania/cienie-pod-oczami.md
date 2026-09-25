@@ -2,7 +2,7 @@
 title: "Cienie pod oczami"
 slug: "cienie-pod-oczami"
 description: "Cienie pod oczami w Katowicach — korekta doliny łez, zapadnięć i zmęczonego wyglądu. Medest."
-seo_title: "Cienie pod oczami Katowice — dolina łez i korekta okolicy oczu | Medest"
+seo_title: "Cienie pod oczami Katowice | Medest"
 subtitle: "Korekta doliny łez, cieni i zmęczonego wyglądu"
 label: "Problem"
 weight: 4

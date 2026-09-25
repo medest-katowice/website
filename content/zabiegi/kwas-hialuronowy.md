@@ -2,7 +2,7 @@
 title: "Kwas hialuronowy"
 slug: "kwas-hialuronowy"
 description: "Kwas hialuronowy w Katowicach — wypełnianie zmarszczek, modelowanie twarzy, odbudowa objętości i nawilżenie. Konsultacja lekarska w Medest."
-seo_title: "Kwas hialuronowy Katowice — modelowanie, zmarszczki, objętość | Medest"
+seo_title: "Kwas hialuronowy Katowice | Medest"
 subtitle: "Modelowanie rysów, wypełnianie zmarszczek i odbudowa objętości"
 label: "Zabieg"
 weight: 2

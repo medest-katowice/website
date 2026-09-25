@@ -1,6 +1,7 @@
 ---
 title: "Standardy ochrony małoletnich"
 description: "Standardy ochrony małoletnich w gabinecie medycyny estetycznej Medest w Katowicach."
+seo_title: "Standardy ochrony małoletnich | Medest"
 label: "Standardy"
 subtitle: "Zasady ochrony małoletnich pacjentów"
 url: "/standardy-ochrony-maloletnich/"

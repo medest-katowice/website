@@ -2,7 +2,7 @@
 title: "Toksyna botulinowa"
 slug: "toksyna-botulinowa"
 description: "Toksyna botulinowa (botoks) w Katowicach — redukcja zmarszczek mimicznych i leczenie nadpotliwości. Konsultacja lekarska w Medest."
-seo_title: "Toksyna botulinowa (botoks) Katowice — zmarszczki i nadpotliwość | Medest"
+seo_title: "Botoks Katowice — toksyna botulinowa | Medest"
 subtitle: "Redukcja zmarszczek mimicznych i leczenie nadpotliwości"
 label: "Zabieg"
 weight: 1

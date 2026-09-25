@@ -1,0 +1,28 @@
+{{- $socialImage := .Site.Params.social_image | absURL -}}
+{{- $address := dict
+    "@type" "PostalAddress"
+    "streetAddress" .Site.Params.address_street
+    "postalCode" .Site.Params.postal_code
+    "addressLocality" .Site.Params.address_locality
+    "addressCountry" .Site.Params.address_country
+-}}
+{{- $geo := dict
+    "@type" "GeoCoordinates"
+    "latitude" .Site.Params.latitude
+    "longitude" .Site.Params.longitude
+-}}
+{{- $business := dict
+    "@context" "https://schema.org"
+    "@type" "MedicalClinic"
+    "@id" (printf "%s#medical-clinic" .Site.BaseURL)
+    "name" .Site.Title
+    "url" .Site.BaseURL
+    "image" $socialImage
+    "telephone" .Site.Params.phone
+    "email" .Site.Params.email
+    "address" $address
+    "geo" $geo
+    "founder" (dict "@type" "Person" "name" .Site.Params.doctor)
+    "areaServed" .Site.Params.address_locality
+-}}
+<script type="application/ld+json">{{ $business | jsonify | safeJS }}</script>

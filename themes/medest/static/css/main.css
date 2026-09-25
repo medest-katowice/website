@@ -164,7 +164,9 @@ img {
     align-items: center;
     justify-content: center;
     width: 1.9rem;
+    min-width: 40px;
     height: 1.9rem;
+    min-height: 40px;
     padding: 0;
     border: 1px solid rgba(255, 255, 255, 0.22);
     background: transparent;

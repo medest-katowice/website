@@ -2,7 +2,7 @@
 title: "Usuwanie przebarwień"
 slug: "usuwanie-przebarwien"
 description: "Usuwanie przebarwień w Katowicach — plamy posłoneczne, pozapalne i nierówny koloryt. Pilingi i mezoterapia w Medest."
-seo_title: "Usuwanie przebarwień Katowice — plamy posłoneczne i melasma | Medest"
+seo_title: "Usuwanie przebarwień Katowice | Medest"
 subtitle: "Redukcja plam posłonecznych, pozapalnych i nierównego kolorytu"
 label: "Problem"
 weight: 2

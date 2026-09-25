@@ -2,7 +2,7 @@
 title: "Wypadanie włosów"
 slug: "wypadanie-wlosow"
 description: "Wypadanie włosów w Katowicach — mezoterapia skóry głowy, diagnostyka przyczyn i plan terapii. Gabinet Medest."
-seo_title: "Wypadanie włosów Katowice — mezoterapia skóry głowy i diagnostyka | Medest"
+seo_title: "Wypadanie włosów Katowice | Medest"
 subtitle: "Diagnostyka przyczyn i wspomaganie odrostu włosów"
 label: "Problem"
 weight: 9

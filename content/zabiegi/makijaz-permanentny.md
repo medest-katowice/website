@@ -1,8 +1,8 @@
 ---
 title: "Medyczny makijaż permanentny"
 slug: "makijaz-permanentny"
-description: "Medyczny makijaż permanentny w Medest w Katowicach - pigmentacja rekonstrukcyjna po mastektomii, kamuflaż blizn i korekty pigmentu. Zabieg wykonywany przez współpracującą z gabinetem specjalistkę."
-seo_title: "Medyczny makijaż permanentny Katowice — pigmentacja rekonstrukcyjna | Medest"
+description: "Medyczny makijaż permanentny w Katowicach — pigmentacja rekonstrukcyjna po mastektomii i kamuflaż blizn w Medest."
+seo_title: "Medyczny makijaż permanentny Katowice | Medest"
 subtitle: "Pigmentacja rekonstrukcyjna i estetyczna wykonywana przez specjalistkę współpracującą z Medest, dla pacjentek po zabiegach medycznych."
 label: "Zabieg"
 weight: 8

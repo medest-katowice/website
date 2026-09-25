@@ -6,6 +6,7 @@
 <div class="certificates-archive">
   {{ with $data.highlight }}
   {{ $alt := printf "%s — %s" .date .description }}
+  {{ $imageConfig := images.Config (printf "static/%s" (strings.TrimPrefix "/" .full)) }}
   <div class="certificate-highlight">
     <div class="certificate-highlight__intro">
       <h2>Lekarz medycyny estetycznej</h2>
@@ -20,7 +21,7 @@
       aria-label="Powiększ certyfikat: {{ $alt }}"
     >
       <span class="certificate-card__thumb certificate-card__thumb--highlight">
-        <img src="{{ (strings.TrimPrefix "/" .full) | relURL }}" alt="{{ $alt }}" loading="eager">
+        <img src="{{ (strings.TrimPrefix "/" .full) | relURL }}" alt="{{ $alt }}" width="{{ $imageConfig.Width }}" height="{{ $imageConfig.Height }}" loading="eager">
       </span>
       <span class="certificate-card__content certificate-card__content--highlight">
         <span class="certificate-card__date">{{ .date }}</span>
@@ -36,6 +37,7 @@
     <ul class="certificate-list">
       {{ range .items }}
       {{ $alt := printf "%s — %s" .date .description }}
+      {{ $imageConfig := images.Config (printf "static/%s" (strings.TrimPrefix "/" .thumb)) }}
       <li class="certificate-item">
         <button
           class="lightbox-trigger certificate-card__trigger"
@@ -46,7 +48,7 @@
           aria-label="Powiększ certyfikat: {{ $alt }}"
         >
           <span class="certificate-card__thumb">
-            <img src="{{ (strings.TrimPrefix "/" .thumb) | relURL }}" alt="{{ $alt }}" loading="lazy">
+            <img src="{{ (strings.TrimPrefix "/" .thumb) | relURL }}" alt="{{ $alt }}" width="{{ $imageConfig.Width }}" height="{{ $imageConfig.Height }}" loading="lazy">
           </span>
           <span class="certificate-card__content">
             <span class="certificate-card__date">{{ .date }}</span>

@@ -2,7 +2,7 @@
 title: "Modelowanie ust"
 slug: "modelowanie-ust"
 description: "Modelowanie ust w Katowicach — powiększanie, konturowanie i nawilżanie ust kwasem hialuronowym. Naturalne efekty w Medest."
-seo_title: "Modelowanie ust Katowice — powiększanie i konturowanie ust | Medest"
+seo_title: "Modelowanie ust Katowice | Medest"
 subtitle: "Powiększanie, konturowanie i nawilżanie ust kwasem hialuronowym"
 label: "Zabieg"
 weight: 3
