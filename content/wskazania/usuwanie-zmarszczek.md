@@ -2,7 +2,7 @@
 title: "Usuwanie zmarszczek"
 slug: "usuwanie-zmarszczek"
 description: "Usuwanie zmarszczek w Katowicach — botoks, kwas hialuronowy, mezoterapia i pilingi. Naturalne odmłodzenie w Medest."
-seo_title: "Usuwanie zmarszczek Katowice — botoks, kwas, mezoterapia | Medest"
+seo_title: "Usuwanie zmarszczek Katowice | Medest"
 subtitle: "Dobór metody do zmarszczek mimicznych i statycznych"
 label: "Problem"
 weight: 1

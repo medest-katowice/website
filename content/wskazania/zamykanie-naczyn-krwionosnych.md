@@ -2,7 +2,7 @@
 title: "Zamykanie naczyń krwionośnych"
 slug: "zamykanie-naczyn-krwionosnych"
 description: "Zamykanie naczynek w Katowicach — redukcja teleangiektazji i rumienia, kwalifikacja do terapii. Gabinet Medest."
-seo_title: "Zamykanie naczynek Katowice — rumień i naczynka | Medest"
+seo_title: "Zamykanie naczynek Katowice | Medest"
 subtitle: "Redukcja naczynek, pajączków i rumienia"
 label: "Problem"
 weight: 5

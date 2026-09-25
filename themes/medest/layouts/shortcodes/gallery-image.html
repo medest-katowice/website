@@ -3,6 +3,8 @@
 {{- if hasPrefix $src "/" -}}
   {{- $resolved = (strings.TrimPrefix "/" $src) | relURL -}}
 {{- end -}}
+{{- $imagePath := strings.TrimPrefix "/" $src -}}
+{{- $imageConfig := images.Config (printf "static/%s" $imagePath) -}}
 <button
   class="lightbox-trigger photo-gallery__trigger"
   type="button"
@@ -11,5 +13,5 @@
   data-lightbox-alt="{{ .Get "alt" }}"
   aria-label="Powiększ zdjęcie: {{ .Get "alt" }}"
 >
-  <img src="{{ $resolved }}" alt="{{ .Get "alt" }}">
+  <img src="{{ $resolved }}" alt="{{ .Get "alt" }}" width="{{ $imageConfig.Width }}" height="{{ $imageConfig.Height }}">
 </button>

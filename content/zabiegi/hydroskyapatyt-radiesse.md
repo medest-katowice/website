@@ -2,7 +2,7 @@
 title: "Hydroksyapatyt wapnia (Radiesse)"
 slug: "hydroskyapatyt-radiesse"
 description: "Radiesse w Katowicach — hydroksyapatyt wapnia do biostymulacji, liftingu i odbudowy objętości twarzy. Gabinet Medest."
-seo_title: "Radiesse Katowice — hydroksyapatyt wapnia, lifting i biostymulacja | Medest"
+seo_title: "Radiesse Katowice | Hydroksyapatyt wapnia | Medest"
 subtitle: "Radiesse, lifting i biostymulacja kolagenowa"
 label: "Zabieg"
 weight: 6

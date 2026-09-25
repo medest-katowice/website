@@ -2,4 +2,6 @@
 {{- if hasPrefix $src "/" -}}
   {{- $src = (strings.TrimPrefix "/" $src) | relURL -}}
 {{- end -}}
-<img src="{{ $src }}" alt="{{ .Get "alt" }}"{{ with .Get "class" }} class="{{ . }}"{{ end }}>
+{{- $imagePath := strings.TrimPrefix "/" (.Get "src") -}}
+{{- $imageConfig := images.Config (printf "static/%s" $imagePath) -}}
+<img src="{{ $src }}" alt="{{ .Get "alt" }}" width="{{ $imageConfig.Width }}" height="{{ $imageConfig.Height }}"{{ with .Get "class" }} class="{{ . }}"{{ end }}>

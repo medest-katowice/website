@@ -47,10 +47,16 @@
     toggle.setAttribute('aria-label', isOpen ? 'Zamknij menu' : 'Otwórz menu');
   }
 
+  function prepareNavigation() {
+    if (document.body.classList.contains('nav-open')) {
+      unlockBodyScroll();
+    }
+  }
+
   toggle.addEventListener('click', toggleMenu);
 
   menu.querySelectorAll('a').forEach(function (link) {
-    link.addEventListener('click', closeMenu);
+    link.addEventListener('click', prepareNavigation);
   });
 
   window.addEventListener('keydown', function (event) {

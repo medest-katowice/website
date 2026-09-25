@@ -1,6 +1,7 @@
 ---
 title: "Klauzula informacyjna RODO"
 description: "Klauzula informacyjna RODO gabinetu medycyny estetycznej Medest w Katowicach."
+seo_title: "RODO — Medest Katowice"
 label: "RODO"
 subtitle: "Informacja o przetwarzaniu danych osobowych"
 url: "/klauzula-informacyjna-rodo/"

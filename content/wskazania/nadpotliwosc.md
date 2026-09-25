@@ -2,7 +2,7 @@
 title: "Nadpotliwość"
 slug: "nadpotliwosc"
 description: "Nadpotliwość w Katowicach — leczenie toksyną botulinową pach, dłoni i stóp. Konsultacja lekarska w Medest."
-seo_title: "Leczenie nadpotliwości Katowice — pachy, dłonie, stopy | Medest"
+seo_title: "Leczenie nadpotliwości Katowice | Medest"
 subtitle: "Leczenie nadpotliwości pach, dłoni i stóp"
 label: "Problem"
 weight: 6

@@ -2,7 +2,7 @@
 title: "Rewitalizacja skóry"
 slug: "rewitalizacja-skory"
 description: "Rewitalizacja skóry w Katowicach — mezoterapia, pilingi i biostymulacja dla skóry matowej i wiotkiej. Medest."
-seo_title: "Rewitalizacja skóry Katowice — mezoterapia, pilingi, biostymulacja | Medest"
+seo_title: "Rewitalizacja skóry Katowice | Medest"
 subtitle: "Poprawa blasku, nawilżenia i jędrności skóry"
 label: "Problem"
 weight: 10

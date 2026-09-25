@@ -2,7 +2,7 @@
 title: "Lifting wolumetryczny"
 slug: "lifting-wolumetryczny"
 description: "Lifting wolumetryczny w Katowicach — bezoperacyjne odmłodzenie twarzy, poprawa owalu i odbudowa objętości. Gabinet Medest."
-seo_title: "Lifting wolumetryczny Katowice — odmłodzenie twarzy bez operacji | Medest"
+seo_title: "Lifting wolumetryczny Katowice | Medest"
 subtitle: "Bezoperacyjne odmłodzenie twarzy i poprawa owalu"
 label: "Zabieg"
 weight: 7

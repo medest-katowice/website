@@ -9,8 +9,10 @@
         {{ end }}
     </div>
     {{ with .image }}
+    {{ $imagePath := strings.TrimPrefix "/" . }}
+    {{ $imageConfig := images.Config (printf "static/%s" $imagePath) }}
     <div class="image-container image-container--natural">
-        <img src="{{ (strings.TrimPrefix "/" .) | relURL }}" alt="{{ $.Params.philosophy.image_alt | default "Gabinet Medest" }}">
+        <img src="{{ $imagePath | relURL }}" alt="{{ $.Params.philosophy.image_alt | default "Gabinet Medest" }}" width="{{ $imageConfig.Width }}" height="{{ $imageConfig.Height }}">
     </div>
     {{ end }}
 </section>
@@ -78,8 +80,10 @@
 {{ with .Params.trust }}
 <section class="section" id="zaufanie">
     {{ with .image }}
+    {{ $imagePath := strings.TrimPrefix "/" . }}
+    {{ $imageConfig := images.Config (printf "static/%s" $imagePath) }}
     <div class="image-container image-wide">
-        <img src="{{ (strings.TrimPrefix "/" .) | relURL }}" alt="Gabinet Medest Katowice">
+        <img src="{{ $imagePath | relURL }}" alt="Gabinet Medest Katowice" width="{{ $imageConfig.Width }}" height="{{ $imageConfig.Height }}">
     </div>
     {{ end }}
     <div class="content-block">

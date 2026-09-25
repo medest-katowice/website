@@ -2,7 +2,7 @@
 title: "Pilingi lekarskie"
 slug: "pilingi-lekarskie"
 description: "Pilingi lekarskie w Katowicach — redukcja przebarwień, blizn potrądzikowych i oznak starzenia. Dobór kwasów przez lekarza w Medest."
-seo_title: "Pilingi lekarskie Katowice — przebarwienia, blizny, odmłodzenie | Medest"
+seo_title: "Pilingi lekarskie Katowice | Medest"
 subtitle: "Pilingi chemiczne na przebarwienia, blizny i nierówny koloryt"
 label: "Zabieg"
 weight: 5

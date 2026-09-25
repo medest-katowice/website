@@ -1,6 +1,7 @@
 ---
 title: "Bezpieczeństwo i FAQ"
 description: "Bezpieczeństwo zabiegów medycyny estetycznej w Medest Katowice. Kwalifikacja, przeciwwskazania, najczęstsze pytania."
+seo_title: "Bezpieczeństwo zabiegów i FAQ | Medest"
 label: "Bezpieczeństwo"
 subtitle: "Twoje bezpieczeństwo jest dla nas priorytetem. Odpowiadamy na najczęstsze pytania."
 url: "/bezpieczenstwo/"
