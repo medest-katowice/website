@@ -10,6 +10,7 @@
   var restoreRafId = 0;
   var savedScrollY = -1;
   var isRestoring = false;
+  var historyScrollKey = 'medestScrollY';
 
   if (!sep || !scroller) return;
 
@@ -34,12 +35,48 @@
     return mobileLayout.matches;
   }
 
+  function syncBrowserScrollRestoration() {
+    if (!window.history || !('scrollRestoration' in window.history)) return;
+
+    window.history.scrollRestoration = usesPageScroll() ? 'auto' : 'manual';
+  }
+
   function getScrollY() {
     if (usesPageScroll()) {
       return getPageScrollY();
     }
 
     return scroller.scrollTop;
+  }
+
+  function getSavedHistoryScrollY() {
+    var state = window.history ? window.history.state : null;
+    var scrollY = state && typeof state === 'object' ? state[historyScrollKey] : null;
+
+    if (typeof scrollY !== 'number' || !isFinite(scrollY) || scrollY < 0) {
+      return null;
+    }
+
+    return scrollY;
+  }
+
+  function saveHistoryScrollPosition() {
+    if (usesPageScroll() || !window.history || typeof window.history.replaceState !== 'function') return;
+
+    var scrollY = getScrollY();
+    var currentState = window.history.state;
+    var nextState = currentState && typeof currentState === 'object'
+      ? Object.assign({}, currentState)
+      : {};
+
+    nextState[historyScrollKey] = scrollY;
+
+    try {
+      window.history.replaceState(nextState, document.title, window.location.href);
+      savedScrollY = scrollY;
+    } catch (error) {
+      // Scroll restoration should never interfere with leaving the page.
+    }
   }
 
   function applyProgress(scrollY) {
@@ -77,17 +114,31 @@
     });
   }
 
-  function waitForRestoredScroll() {
-    var targetScrollY = savedScrollY;
-    var attemptsRemaining = 60;
+  function restoreHistoryScrollPosition(fallbackScrollY) {
+    var pageScroll = usesPageScroll();
+    var targetScrollY = pageScroll ? null : getSavedHistoryScrollY();
+
+    if (targetScrollY === null && typeof fallbackScrollY === 'number' && fallbackScrollY >= 0) {
+      targetScrollY = fallbackScrollY;
+    }
+
+    if (targetScrollY === null) return false;
+
+    var attemptsRemaining = 90;
 
     isRestoring = true;
+    savedScrollY = targetScrollY;
 
     function poll() {
       restoreRafId = 0;
 
+      if (!pageScroll) {
+        var maxScrollY = Math.max(scroller.scrollHeight - scroller.clientHeight, 0);
+        scroller.scrollTop = Math.min(targetScrollY, maxScrollY);
+      }
+
       var scrollY = getScrollY();
-      var restored = targetScrollY < 0 || Math.abs(scrollY - targetScrollY) <= 0.5;
+      var restored = Math.abs(scrollY - targetScrollY) <= 0.5;
 
       if (restored || attemptsRemaining <= 0) {
         isRestoring = false;
@@ -107,11 +158,8 @@
   window.addEventListener('resize', scheduleRefresh, { passive: true });
   window.addEventListener('orientationchange', scheduleRefresh, { passive: true });
 
-  window.addEventListener('load', function () {
-    scheduleRefresh();
-  }, { passive: true });
-
   window.addEventListener('pagehide', function () {
+    saveHistoryScrollPosition();
     savedScrollY = getScrollY();
     isRestoring = false;
     cancelScheduledRefreshes();
@@ -121,13 +169,21 @@
     cancelScheduledRefreshes();
 
     if (event.persisted) {
-      waitForRestoredScroll();
+      restoreHistoryScrollPosition(savedScrollY);
       return;
     }
 
     isRestoring = false;
-    scheduleRefresh();
+    if (!restoreHistoryScrollPosition()) {
+      scheduleRefresh();
+    }
   });
+
+  window.addEventListener('load', function () {
+    if (!restoreHistoryScrollPosition()) {
+      scheduleRefresh();
+    }
+  }, { passive: true });
 
   if (viewport) {
     viewport.addEventListener('scroll', scheduleRefresh, { passive: true });
@@ -135,10 +191,17 @@
   }
 
   if (typeof mobileLayout.addEventListener === 'function') {
-    mobileLayout.addEventListener('change', scheduleRefresh);
+    mobileLayout.addEventListener('change', function () {
+      syncBrowserScrollRestoration();
+      scheduleRefresh();
+    });
   } else if (typeof mobileLayout.addListener === 'function') {
-    mobileLayout.addListener(scheduleRefresh);
+    mobileLayout.addListener(function () {
+      syncBrowserScrollRestoration();
+      scheduleRefresh();
+    });
   }
 
+  syncBrowserScrollRestoration();
   refreshSeparator();
 })();

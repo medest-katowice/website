@@ -60,7 +60,7 @@
         {{ partial "sidebar.html" . }}
         {{ partial "separator.html" . }}
 
-        <main class="scroll-right">
+        <main class="scroll-right{{ if .IsHome }} scroll-right--home{{ end }}">
             {{ block "main" . }}{{ end }}
 
             {{ partial "footer.html" . }}
